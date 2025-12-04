@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Esprit Parking</title>
+
+    <!-- Tailwind compilé -->
+    <link rel="stylesheet" href="output.css">
+
+</head>
+
+<body class="bg-white text-black">
+
+<!-- ===== SIDEBAR ===== -->
+<div class="flex">
+
+<aside class="w-64 bg-[#DC143C] text-white shadow-md min-h-screen p-6 relative">
+
+    <div class="flex items-center space-x-3 mb-10">
+        <div class="bg-white text-[#DC143C] rounded-lg w-10 h-10 flex items-center justify-center font-bold">
+            P
+        </div>
+        <div class="text-xl font-bold">ESPRIT Parking</div>
+    </div>
+
+    <nav class="space-y-2 font-semibold">
+        <p class="uppercase text-sm text-white">Réserver</p>
+        <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+
+        <p class="uppercase text-sm text-white mt-4">Liste des favoris</p>
+        <a class="block py-2 px-3 rounded hover:bg-white/20">Carte du parking</a>
+
+        <p class="uppercase text-sm text-white mt-4">Dashboard</p>
+        <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de parking</a>
+        <a class="block py-2 px-3 rounded hover:bg-white/20">Historique</a>
+        <a class="block py-2 px-3 rounded hover:bg-white/20">Rapport</a>
+        <a class="block py-2 px-3 rounded hover:bg-white/20">Messagerie</a>
+        <a class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+        <a class="block py-2 px-3 rounded hover:bg-white/20">Ma véhicule</a>
+    </nav>
+
+    <div class="absolute bottom-1 left-1 flex items-center space-x-6">
+        <img src="C:\Users\Lenovo\Desktop\project\assets\images\profil.jpg" class="w-11 h-11 rounded-full border border-[#DC143C]">
+        <p class="font-bold">Profil</p>
+    </div>
+
+</aside>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="flex-1 p-10">
+
+    <div class="flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-bold">Profil</h1>
+        <img src="C:\Users\Lenovo\Desktop\project\assets\images\logo.png" alt="logo" class="w-28 h-15 object-cover">
+    </div>
+
+    <div class="grid grid-cols-3 gap-6">
+
+        <!-- INFOS PERSONNELLES -->
+        <div class="col-span-2 bg-[#F3F7F8] shadow-md rounded-xl p-6">
+            <h2 class="font-bold text-xl mb-4">Informations Personnelles :</h2>
+
+            <div class="flex items-start space-x-6">
+                <div class="flex-1 space-y-2">
+                    <p><strong>Nom et Prénom :</strong> Ounis Khalil</p>
+                    <p><strong>Age :</strong> 23 ans</p>
+                    <p><strong>Classe :</strong> 4 DS 2</p>
+                    <p><strong>Téléphone :</strong> +216 98 574 236</p>
+                    <p><strong>Email :</strong> Ounis.Khalil@esprit.tn</p>
+
+                    <div class="flex space-x-3 mt-4">
+                        <button class="px-4 py-2 rounded bg-[#DC143C] text-white">Modifier Profil</button>
+                        <button class="px-4 py-2 rounded border-2 border-[#DC143C] text-[#DC143C] bg-transparent">Modifier Mot de Passe</button>
+                    </div>
+                </div>
+
+                <img src="C:\Users\Lenovo\Desktop\project\assets\images\profil.jpg" class="rounded-full w-52 h-52 object-cover">
+            </div>
+        </div>
+
+        <!-- MON FORFAIT -->
+        <div class="bg-[#F3F7F8] shadow-md rounded-xl p-6">
+            <h2 class="font-bold text-xl mb-4">Mon Forfaits Actuel :</h2>
+            <p class="font-semibold mb-2">Forfait étudiant</p>
+            <p class="text-sm mb-4">Renouvellement le <strong>01/12/2025</strong></p>
+
+            <h3 class="font-semibold mt-4 mb-2">Fonctionnalités supplémentaires :</h3>
+            <ul class="text-sm space-y-1">
+                <li>✔️ Stationnement illimité</li>
+                <li>✔️ Accès aux zones VIP</li>
+                <li>✔️ Lavage auto mensuel</li>
+                <li>✔️ Vidéosurveillance</li>
+            </ul>
+
+            <h3 class="font-semibold mt-6 mb-2">Appareils Connectés :</h3>
+            <ul class="text-sm space-y-1">
+                <li>📱 SAMSUNG A56</li>
+                <li>⌚ SMART WATCH 2</li>
+            </ul>
+
+            <button class="mt-4 w-full bg-[#DC143C] text-white py-2 rounded">
+                Déconnecter tous les appareils
+            </button>
+        </div>
+
+        <!-- PRÉFÉRENCES -->
+        <div class="bg-[#F3F7F8] shadow-md rounded-xl p-6">
+            <h2 class="font-bold text-xl mb-4">Préférences du compte :</h2>
+
+            <div class="flex items-center justify-between mb-4">
+                <p>Notification par email</p>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" checked class="sr-only peer">
+                    <div class="w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-[#DC143C] transition"></div>
+                </label>
+            </div>
+
+            <div class="flex items-center justify-between mb-4">
+                <p>Mode Sombre</p>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" class="sr-only peer">
+                    <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#DC143C] transition"></div>
+                </label>
+            </div>
+
+            <p class="font-semibold mb-1">Langue :</p>
+            <select class="border p-2 rounded w-full">
+                <option>Français</option>
+            </select>
+        </div>
+
+        <!-- SÉCURITÉ -->
+        <div class="bg-[#F3F7F8] shadow-md rounded-xl p-6">
+            <h2 class="font-bold text-xl mb-4">Sécurité du compte :</h2>
+            <button class="w-full bg-[#DC143C] text-white py-2 rounded mb-4">
+                Activer la Double Authentification
+            </button>
+
+            <p class="text-sm mb-2">
+                Dernière connexion : il y a 5 minutes ( Ariana/Ghazella )
+            </p>
+
+            <a href="#" class="text-[#DC143C] font-semibold underline text-sm">
+                Historiques des connexions
+            </a>
+        </div>
+
+    </div>
+</main>
+</div>
+
+</body>
+</html>
