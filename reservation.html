@@ -4,17 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réserver - ESPRIT Parking</title>
-    <link href="./output.css" rel="stylesheet">
+    
+    <!--   CDN f blaset output.css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Reset de sécurité -->
+    <style>
+        html {
+            font-size: 16px !important;
+        }
+        body {
+            font-size: 1rem !important;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-sans">
 
 <div class="flex min-h-screen">
 
-    <!-- SIDEBAR -->
+    <!-- sidebar -->
     <aside class="w-64 bg-[#DC143C] text-white min-h-screen flex flex-col">
         
-        <!-- Logo -->
+        <!-- logo -->
         <div class="p-6">
             <div class="flex items-center space-x-3">
                 <div class="bg-white text-[#DC143C] rounded-lg w-12 h-12 flex items-center justify-center font-bold text-xl">
@@ -27,7 +39,7 @@
             </div>
         </div>
 
-        <!-- Navigation -->
+        <!-- navigation -->
         <nav class="flex-1 px-4">
             <div class="mb-6">
                 <div class="bg-white text-[#DC143C] font-bold py-2 px-4 rounded">
@@ -40,7 +52,7 @@
 
             <div class="mb-6">
                 <div class="text-white font-bold mb-2">Liste des favoris</div>
-                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">
+                <a href="carte.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">
                     Carte du parking
                 </a>
             </div>
@@ -48,11 +60,11 @@
             <div>
                 <div class="text-white font-bold mb-2">Dashboard</div>
                 <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Sécurité de parking</a>
-                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Historique</a>
-                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Rapport</a>
-                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Messagerie</a>
+                <a href="Historique.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Historique</a>
+                <a href="Rapport.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Rapport</a>
+                <a href="Messagerie.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Messagerie</a>
                 <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Guide de Sécurité</a>
-                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Ma véhicule</a>
+                <a href="Mavehicule.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Ma véhicule</a>
             </div>
         </nav>
 
@@ -64,7 +76,7 @@
 
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- main -->
     <main class="flex-1 p-8 bg-white">
         
         <!-- Header -->
