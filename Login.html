@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login - ParkUNI ESPRIT</title>
+    <style>
+      .bg-crimson {
+        background-color: #dc143c;
+      }
+      .hover\:bg-crimson-dark:hover {
+        background-color: #b00f30; /* version plus foncée au survol */
+      }
+      .text-crimson {
+        color: #dc143c;
+      }
+      .hover\:text-crimson-dark:hover {
+        color: #b00f30;
+      }
+      .focus\:ring-crimson:focus {
+        --tw-ring-opacity: 1;
+        --tw-ring-color: rgba(220, 20, 60, var(--tw-ring-opacity));
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50 font-sans min-h-screen flex flex-col">
+
+    <header class="bg-white shadow py-4 z-50 relative">
+      <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+        <img
+          src="./assets/images/img.png"
+          alt="Logo ESPRIT"
+          class="h-10 sm:h-12 md:h-16"
+        />
+
+      
+        <nav class="hidden md:flex space-x-6">
+          <a
+            href="Homepage.html"
+            class="text-gray-700 hover:text-white hover:bg-crimson px-3 py-1 rounded transition"
+            >Accueil</a
+          >
+          <a
+            href="#"
+            class="text-gray-700 hover:text-white hover:bg-crimson px-3 py-1 rounded transition"
+            >Contact</a
+          >
+          <a
+            href="#"
+            class="text-gray-700 hover:text-white hover:bg-crimson px-3 py-1 rounded transition"
+            >À propos</a
+          >
+        </nav>
+
+  
+        <button id="burger" class="md:hidden text-gray-700 focus:outline-none">
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <nav
+        id="mobileMenu"
+        class="hidden md:hidden bg-white px-4 py-3 space-y-2"
+      >
+        <a
+          href="#"
+          class="block text-gray-700 hover:bg-crimson hover:text-white px-3 py-1 rounded"
+          >Accueil</a
+        >
+        <a
+          href="#"
+          class="block text-gray-700 hover:bg-crimson hover:text-white px-3 py-1 rounded"
+          >Contact</a
+        >
+        <a
+          href="#"
+          class="block text-gray-700 hover:bg-crimson hover:text-white px-3 py-1 rounded"
+          >À propos</a
+        >
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="bg-crimson py-10 flex-grow">
+      <div
+        class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      >
+        <!-- Image -->
+        <div
+          class="relative bg-white rounded-lg shadow-lg overflow-hidden p-2 sm:p-3"
+        >
+          <div class="relative rounded-lg overflow-hidden">
+            <img
+              src="./assets/images/image1.jpg"
+              alt="Campus ESPRIT"
+              class="w-full h-auto object-cover max-h-[300px] sm:max-h-[400px]"
+            />
+
+            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+
+            <div
+              class="absolute inset-0 flex items-end sm:items-center justify-start sm:justify-center p-4 text-white z-10"
+            >
+              <h2
+                class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-tight sm:text-center"
+              >
+                Réservation de place — stationnement intelligent dédié au campus
+                ESPRIT.
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+          <h1 class="text-xl sm:text-2xl font-bold text-center mb-6">
+            Se Connecter
+          </h1>
+
+          <form class="space-y-4">
+            <div>
+              <label
+                for="username"
+                class="block text-xs sm:text-sm font-medium text-gray-700 mb-1"
+                >Nom d'utilisateur ou Email</label
+              >
+              <input
+                type="text"
+                id="username"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-crimson focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label
+                for="password"
+                class="block text-xs sm:text-sm font-medium text-gray-700 mb-1"
+                >Mot de Passe</label
+              >
+              <input
+                type="password"
+                id="password"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-crimson focus:outline-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-crimson text-white py-2 sm:py-3 rounded-full font-medium hover:bg-crimson-dark transition"
+            >
+              Se Connecter
+            </button>
+
+            <div class="text-center mt-4">
+              <a
+                href="signup.html"
+                class="text-black hover:text-gray-800 font-medium text-sm"
+                >S'inscrire</a
+              >
+            </div>
+
+            <div class="text-center mt-2">
+              <a
+                href="Forgot password.html"
+                class="text-sky-500 hover:text-sky-600 text-xs sm:text-sm"
+                >Mot de passe oublié ?</a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-crimson text-white py-5 text-center mt-10">
+      <div class="max-w-6xl mx-auto px-4 text-xs sm:text-sm">
+        <p>&copy; 2025 ParkUNI ESPRIT — Tous droits réservés.</p>
+        <p class="mt-1">
+          Gestion intelligente du stationnement pour le campus ESPRIT
+        </p>
+        <p class="mt-1">Bloc G • Bloc H • Bloc E</p>
+      </div>
+    </footer>
+
+    <script>
+      const burger = document.getElementById("burger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      burger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

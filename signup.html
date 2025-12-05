@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Inscription - ParkUNI ESPRIT</title>
+  </head>
+  <body class="bg-gray-50 font-sans min-h-screen flex flex-col">
+    <!-- HEADER -->
+    <header class="bg-white shadow py-4 z-50 relative">
+      <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+        <img
+          src="./assets/images/img.png"
+          alt="Logo ESPRIT"
+          class="h-10 sm:h-12 md:h-16"
+        />
+
+
+        <nav class="hidden md:flex space-x-6">
+          <a
+            href="#"
+            class="text-gray-700 hover:text-white hover:bg-[#DC143C] px-3 py-1 rounded transition-colors font-medium"
+            >Accueil</a
+          >
+          <a
+            href="#"
+            class="text-gray-700 hover:text-white hover:bg-[#DC143C] px-3 py-1 rounded transition-colors font-medium"
+            >Contact</a
+          >
+          <a
+            href="#"
+            class="text-gray-700 hover:text-white hover:bg-[#DC143C] px-3 py-1 rounded transition-colors font-medium"
+            >À propos</a
+          >
+        </nav>
+
+   
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-gray-700 focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+   
+      <nav
+        id="mobile-menu"
+        class="hidden md:hidden bg-white px-4 pt-2 pb-4 space-y-2"
+      >
+        <a
+          href="Homepage.html"
+          class="block text-gray-700 hover:text-white hover:bg-[#DC143C] px-3 py-1 rounded transition-colors"
+          >Accueil</a
+        >
+        <a
+          href="#"
+          class="block text-gray-700 hover:text-white hover:bg-[#DC143C] px-3 py-1 rounded transition-colors"
+          >Contact</a
+        >
+        <a
+          href="#"
+          class="block text-gray-700 hover:text-white hover:bg-[#DC143C] px-3 py-1 rounded transition-colors"
+          >À propos</a
+        >
+      </nav>
+    </header>
+
+    
+    <main class="bg-[#DC143C] py-6 sm:py-10 flex-grow">
+      <div
+        class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center"
+      >
+     
+        <div class="relative bg-white p-3 sm:p-4 rounded-lg shadow-lg">
+          <div class="relative rounded-lg overflow-hidden w-full">
+            <img
+              src="./images/image1.jpg"
+              alt="Campus ESPRIT"
+              class="w-full h-auto object-cover max-h-[300px] sm:max-h-[400px]"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+            <div
+              class="absolute inset-0 flex items-center justify-center text-white z-10 px-3 sm:px-4 text-center"
+            >
+              <h2
+                class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-tight"
+              >
+                Réservation de place —<br />stationnement intelligent dédié
+                au<br />campus ESPRIT.
+              </h2>
+            </div>
+          </div>
+          <div class="flex justify-center mt-2 sm:mt-3 space-x-1 sm:space-x-2">
+            <div class="w-2 h-2 sm:w-3 sm:h-3 bg-[#DC143C] rounded-full"></div>
+            <div class="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full"></div>
+          </div>
+        </div>
+
+     
+        <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+          <h1 class="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6">
+            Inscription
+          </h1>
+          <form class="space-y-3 sm:space-y-4" novalidate>
+            <div>
+              <label
+                for="fullname"
+                class="block text-xs sm:text-sm font-medium text-gray-700 mb-1"
+                >Nom Complet</label
+              >
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                required
+                class="w-full px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DC143C] focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block text-xs sm:text-sm font-medium text-gray-700 mb-1"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DC143C] focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label
+                for="password"
+                class="block text-xs sm:text-sm font-medium text-gray-700 mb-1"
+                >Mot de Passe</label
+              >
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                minlength="6"
+                class="w-full px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DC143C] focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label
+                for="confirm-password"
+                class="block text-xs sm:text-sm font-medium text-gray-700 mb-1"
+                >Confirmer Mot de Passe</label
+              >
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                required
+                class="w-full px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DC143C] focus:border-transparent"
+              />
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-[#DC143C] text-white py-1.5 sm:py-2 px-4 rounded-full font-medium hover:bg-red-700 transition-colors"
+            >
+              S'inscrire
+            </button>
+          </form>
+
+          <div class="mt-4 sm:mt-6 text-center text-xs sm:text-sm">
+            <p class="mb-1 sm:mb-2">
+              Vous avez déjà un compte?
+              <a href="Login.html" class="text-blue-600 hover:text-blue-800 font-medium"
+                >Se connecter</a
+              >
+            </p>
+            <div class="flex items-center my-2 sm:my-4">
+              <hr class="flex-grow border-gray-300" />
+              <span class="px-2 sm:px-4 text-gray-500">ou</span>
+              <hr class="flex-grow border-gray-300" />
+            </div>
+            <button
+              class="w-full flex items-center justify-center bg-white border border-gray-300 py-1.5 sm:py-2 px-4 rounded-md hover:bg-gray-50 transition-colors"
+            >
+              <span class="text-red-600 font-bold text-lg mr-2">G</span>
+              S'inscrire avec Google
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+   
+    <footer
+      class="bg-[#DC143C] text-white py-4 sm:py-6 mt-8 sm:mt-12 text-center"
+    >
+      <div class="max-w-6xl mx-auto px-4 text-xs sm:text-sm">
+        <p>&copy; 2025 ParkUNI ESPRIT. Tous droits réservés.</p>
+        <p class="mt-1">
+          Système de gestion intelligente du stationnement pour le campus ESPRIT
+        </p>
+        <p class="mt-1">Bloc G • Bloc H • Bloc E</p>
+      </div>
+    </footer>
+
+    <script>
+      // Toggle menu mobile
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
