@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scanner QR Code - ESPRIT Parking</title>
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+<div class="flex min-h-screen">
+
+  <!-- SIDEBAR -->
+  <aside class="w-64 bg-[#DC143C] text-white min-h-screen flex flex-col">
+    <!-- Logo -->
+    <div class="p-6">
+      <div class="flex items-center space-x-3">
+        <div class="bg-white text-[#DC143C] rounded-lg w-12 h-12 flex items-center justify-center font-bold text-xl">P</div>
+        <div>
+          <div class="text-sm font-bold">ESPRIT</div>
+          <div class="text-xs">Parking</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 px-4">
+      <div class="mb-6">
+        <div class="bg-white text-[#DC143C] font-bold py-2 px-4 rounded">Réserver</div>
+        <a href="mes-reservations.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded mt-1">Mes Réservations</a>
+      </div>
+      <div class="mb-6">
+        <div class="text-white font-bold mb-2">Liste des favoris</div>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Carte du parking</a>
+      </div>
+      <div>
+        <div class="text-white font-bold mb-2">Dashboard</div>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Sécurité de parking</a>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Historique</a>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Rapport</a>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Messagerie</a>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Guide de Sécurité</a>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Ma véhicule</a>
+      </div>
+    </nav>
+
+    <!-- Profil -->
+    <div class="p-4 flex items-center space-x-3">
+      <img src="assets/images/profil.jpg" alt="Profil" class="w-12 h-12 rounded-full">
+      <span class="text-sm font-semibold">Profil</span>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 p-8 bg-white">
+    
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-sm text-gray-500">* Scanne quand tu es prés de porte de Parking</h1>
+      <img src="assets/images/logo.png" alt="ESPRIT Logo" class="h-20">
+    </div>
+
+    <!-- Scanner Card -->
+    <div class="max-w-2xl bg-white rounded-lg shadow-sm p-8 mx-auto">
+      
+      <!-- Zone Info -->
+      <div class="text-center mb-6">
+        <p class="text-sm text-gray-600 mb-1">Zone A - Niveau 1 - Place A1</p>
+      </div>
+
+      <!-- Instructions -->
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold mb-4">Scanner pour entrer</h2>
+        <p class="text-sm text-gray-600 mb-6">Positionnez le QR code devant la caméra</p>
+
+        <!-- Camera placeholder -->
+        <div class="max-w-md mx-auto border-4 border-red-600 rounded-lg p-12 mb-6 flex items-center justify-center">
+          <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 5c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0 12a5 5 0 110-10 5 5 0 010 10z"/>
+            <path d="M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+          </svg>
+        </div>
+        
+        
+        <!-- Scanner Text -->
+        <p class="w-full max-w-md text-center text-neutral-950 font-bold text-lg mb-4 mx-auto">
+        Scanner pour continuer
+        </p>
+
+
+        <!-- Reservation Info -->
+        <div class="text-sm text-gray-600 mb-2">
+          Réservation: <span class="font-bold text-red-600">N° 12345</span>
+        </div>
+
+        <!-- Cancel Button -->
+        <button onclick="window.location.href='reservation.html'" 
+          class="w-full max-w-md border border-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-50">
+          Annuler
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

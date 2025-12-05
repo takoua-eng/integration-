@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver - ESPRIT Parking</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+<div class="flex min-h-screen">
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 bg-[#DC143C] text-white min-h-screen flex flex-col">
+        
+        <!-- Logo -->
+        <div class="p-6">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white text-[#DC143C] rounded-lg w-12 h-12 flex items-center justify-center font-bold text-xl">
+                    P
+                </div>
+                <div>
+                    <div class="text-sm font-bold">ESPRIT</div>
+                    <div class="text-xs">Parking</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 px-4">
+            <div class="mb-6">
+                <div class="bg-white text-[#DC143C] font-bold py-2 px-4 rounded">
+                    Réserver
+                </div>
+                <a href="mes-reservations.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded mt-1">
+                    Mes Réservations
+                </a>
+            </div>
+
+            <div class="mb-6">
+                <div class="text-white font-bold mb-2">Liste des favoris</div>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">
+                    Carte du parking
+                </a>
+            </div>
+
+            <div>
+                <div class="text-white font-bold mb-2">Dashboard</div>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Sécurité de parking</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Historique</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Rapport</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Messagerie</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Guide de Sécurité</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Ma véhicule</a>
+            </div>
+        </nav>
+
+        <!-- Profile -->
+        <div class="p-4 flex items-center space-x-3">
+            <img src="assets/images/profil.jpg" alt="Profile" class="w-12 h-12 rounded-full">
+            <span class="text-sm font-semibold">Profil</span>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 p-8 bg-white">
+        
+        <!-- Header -->
+        <div class="flex justify-between items-start mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-black mb-2">Nouvelle Reservation</h1>
+                <p class="text-gray-600 text-sm flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[#DC143C]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6z"/>
+                    </svg>
+                    Planifiez votre stationnement sur le campus
+                </p>
+            </div>
+            <img src="assets/images/logo.png" alt="ESPRIT Logo" class="h-20">
+        </div>
+
+        <!-- Form -->
+        <div class="max-w-2xl">
+            
+            <!-- Date d'arrivée -->
+            <div class="mb-6">
+                <label class="flex items-center text-sm font-semibold text-gray-700 mb-2">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-width="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6" stroke-width="2"/>
+                        <line x1="8" y1="2" x2="8" y2="6" stroke-width="2"/>
+                        <line x1="3" y1="10" x2="21" y2="10" stroke-width="2"/>
+                    </svg>
+                    Date d'arrivée
+                </label>
+                <input type="date" value="2025-11-10" 
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#DC143C]">
+            </div>
+
+            <!-- Heure d'arrivée -->
+            <div class="mb-6">
+                <label class="flex items-center text-sm font-semibold text-gray-700 mb-2">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                        <polyline points="12 6 12 12 16 14" stroke-width="2"/>
+                    </svg>
+                    Heure d'arrivée
+                </label>
+                <input type="time" value="10:00" 
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#DC143C]">
+            </div>
+
+            <!-- Durée de Stationnement -->
+            <div class="mb-6">
+                <label class="flex items-center text-sm font-semibold text-gray-700 mb-2">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                        <polyline points="12 6 12 12 16 14" stroke-width="2"/>
+                    </svg>
+                    Durée de Stationnement
+                </label>
+                <input type="text" value="2h" 
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#DC143C]">
+            </div>
+
+            <!-- Zone préférée -->
+            <div class="mb-8">
+                <label class="flex items-center text-sm font-semibold text-gray-700 mb-2">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    Zone préférée
+                </label>
+                <input type="text" value="Zone A - Niveau 1" 
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#DC143C]">
+            </div>
+
+            <!-- Button -->
+            <button onclick="window.location.href='choisir-place.html'" 
+                class="w-full bg-[#DC143C] hover:bg-[#B01030] text-white font-bold py-4 rounded-lg transition duration-200">
+                Sélectionner une place →
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

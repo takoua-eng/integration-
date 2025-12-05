@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choisir une place - ESPRIT Parking</title>
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+<div class="flex min-h-screen">
+
+  <!-- sidebare -->
+  <aside class="w-64 bg-[#DC143C] text-white min-h-screen flex flex-col">
+    <!-- logo -->
+    <div class="p-6">
+      <div class="flex items-center space-x-3">
+        <div class="bg-white text-[#DC143C] rounded-lg w-12 h-12 flex items-center justify-center font-bold text-xl">P</div>
+        <div>
+          <div class="text-sm font-bold">ESPRIT</div>
+          <div class="text-xs">Parking</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- navigation -->
+    <nav class="flex-1 px-4">
+      <div class="mb-6">
+        <div class="bg-white text-[#DC143C] font-bold py-2 px-4 rounded">Réserver</div>
+        <a href="mes-reservations.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded mt-1">Mes Réservations</a>
+      </div>
+      <div class="mb-6">
+        <div class="text-white font-bold mb-2">Liste des favoris</div>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Carte du parking</a>
+      </div>
+      <div>
+        <div class="text-white font-bold mb-2">Dashboard</div>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Sécurité de parking</a>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Historique</a>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Rapport</a>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Messagerie</a>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Guide de Sécurité</a>
+        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Ma véhicule</a>
+      </div>
+    </nav>
+
+    <!-- profil -->
+    <div class="p-4 flex items-center space-x-3">
+      <img src="assets/images/profil.jpg" alt="Profil" class="w-12 h-12 rounded-full">
+      <span class="text-sm font-semibold">Profil</span>
+    </div>
+  </aside>
+
+  <!-- main -->
+  <main class="flex-1 p-8 bg-white">
+    
+    <!-- header -->
+    <div class="flex justify-between items-start mb-8">
+      <div>
+        <h1 class="text-3xl font-bold text-black mb-2">Choisissez votre place</h1>
+        <p class="text-gray-600 text-sm flex items-center">
+          <svg class="w-4 h-4 mr-2 text-[#DC143C]" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6z"/>
+          </svg>
+          Planifiez votre stationnement sur le campus
+        </p>
+      </div>
+      <img src="assets/images/logo.png" alt="ESPRIT Logo" class="h-20">
+    </div>
+
+    <!-- Legende -->
+    <div class="max-w-2xl bg-white rounded-lg shadow-sm p-8 mb-6">
+      <div class="flex gap-4 text-xs mb-4">
+        <div class="flex items-center gap-2">
+          <div class="w-4 h-4 bg-gray-300 rounded"></div>
+          <span>Place libre</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-4 h-4 bg-gray-400 rounded"></div>
+          <span>Place sélectionnée</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-4 h-4 bg-red-400 rounded"></div>
+          <span>Place occupée</span>
+        </div>
+      </div>
+
+      <!-- Informations Zone -->
+      <div class="flex items-center gap-6 mb-6 text-sm">
+        <span class="font-medium">Zone A -</span>
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" stroke-width="2"/>
+          </svg>
+          Distance: 80 m
+        </span>
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" stroke-width="2"/>
+          </svg>
+          Temps: ~2 mins
+        </span>
+      </div>
+
+
+<!-- les zones-->
+      
+      <div class="grid grid-cols-6 gap-4">
+        <div>
+          <input type="radio" name="spot" id="spot-A1" class="sr-only peer" />
+          <label for="spot-A1" class="aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A1</label>
+        </div>
+        <div>
+          <input type="radio" name="spot" id="spot-A2" class="sr-only peer" />
+          <label for="spot-A2" class=" aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A2</label>
+        </div>
+        <div>
+          <input type="radio" name="spot" id="spot-A3" class="sr-only peer" disabled />
+          <label for="spot-A3" class="aspect-square rounded-lg font-semibold text-lg bg-red-400 cursor-not-allowed opacity-70 flex items-center justify-center">A3</label>
+        </div>
+        <div>
+          <input type="radio" name="spot" id="spot-A4" class="sr-only peer" />
+          <label for="spot-A4" class="aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A4</label>
+        </div>
+        <div>
+          <input type="radio" name="spot" id="spot-A5" class="sr-only peer" />
+          <label for="spot-A5" class="aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A5</label>
+        </div>
+        <div>
+          <input type="radio" name="spot" id="spot-A6" class="sr-only peer" />
+          <label for="spot-A6" class="aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A6</label>
+        </div>
+        <div>
+          <input type="radio" name="spot" id="spot-A7" class="sr-only peer" />
+          <label for="spot-A7" class="aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A7</label>
+        </div>
+        <div>
+          <input type="radio" name="spot" id="spot-A8" class="sr-only peer" />
+          <label for="spot-A8" class="aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A8</label>
+        </div>
+        <div>
+          <input type="radio" name="spot" id="spot-A10" class="sr-only peer" />
+          <label for="spot-A10" class="aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A10</label>
+        </div>
+        <div>
+          <input type="radio" name="spot" id="spot-A11" class="sr-only peer" />
+          <label for="spot-A11" class="aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A11</label>
+        </div>
+        <div>
+          <input type="radio" name="spot" id="spot-A12" class="sr-only peer" />
+          <label for="spot-A12" class="aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A12</label>
+        </div>
+        <div>
+          <input type="radio" name="spot" id="spot-A13" class="sr-only peer" disabled />
+          <label for="spot-A13" class="aspect-square rounded-lg font-semibold text-lg bg-red-400 cursor-not-allowed opacity-70 flex items-center justify-center">A13</label>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- Boutons -->
+      <div class="mt-6 flex flex-col gap-3">
+        <button onclick="window.location.href='reservation-confirm.html'" 
+          class="w-full bg-[#DC143C] hover:bg-[#B01030] text-white font-bold py-3 rounded-lg transition duration-200">
+          Confirmer la réservation ✓
+        </button>
+        <button onclick="window.location.href='reservation.html'" 
+          class="w-full text-center text-sm text-gray-600 hover:text-gray-800">
+          ← Retour
+        </button>
+      </div>
+
+
+
+
+
+    </div>
+  </main>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

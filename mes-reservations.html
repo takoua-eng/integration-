@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Réservations - Esprit Parking</title>
+    <link href="./output.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#DC143C',
+                        secondary: '#A8201A',
+                        accent: '#F9C74F',
+                        background: '#FAFAFA',
+                        text: '#000000',
+                        sidebar: '#DC143C',
+                        soft: '#E5E5E5',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 text-text">
+
+<!-- sidebare -->
+<div class="flex">
+
+    <aside class="w-64 bg-[#DC143C] text-white min-h-screen flex flex-col">
+        <!-- logo -->
+        <div class="p-6">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white text-[#DC143C] rounded-lg w-12 h-12 flex items-center justify-center font-bold text-xl">P</div>
+                <div>
+                    <div class="text-sm font-bold">ESPRIT</div>
+                    <div class="text-xs">Parking</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- navigation -->
+        <nav class="flex-1 px-4">
+            <div class="mb-6">
+                <a href="reservation.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Réserver</a>
+                <div class="bg-white text-[#DC143C] font-bold py-2 px-4 rounded mt-1">Mes Réservations</div>
+            </div>
+            <div class="mb-6">
+                <div class="text-white font-bold mb-2">Liste des favoris</div>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Carte du parking</a>
+            </div>
+            <div>
+                <div class="text-white font-bold mb-2">Dashboard</div>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Sécurité de parking</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Historique</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Rapport</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Messagerie</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Guide de Sécurité</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Ma véhicule</a>
+            </div>
+        </nav>
+
+        <!-- profil -->
+        <div class="p-4 flex items-center space-x-3">
+            <img src="assets/images/profil.jpg" alt="Profil" class="w-12 h-12 rounded-full">
+            <span class="text-sm font-semibold">Profil</span>
+        </div>
+    </aside>
+
+    <!-- main -->
+    <main class="flex-1 p-10 bg-white">
+
+    <!-- header -->
+    <div class="flex justify-between items-center mb-8">
+        <div>
+            <h1 class="text-3xl font-bold">Mes réservations</h1>
+            <p class="text-gray-600 mt-2">Consultez toutes vos anciennes réservations</p>
+        </div>
+        <img src="assets/images/logo.png" alt="logo" class="w-28 h-15 object-cover">
+    </div>
+
+    <!--  recherche -->
+    <div class="mb-8">
+        <div class="relative max-w-2xl">
+            <input 
+                type="text" 
+                placeholder="Rechercher une Réservation.." 
+                class="w-full border-2 border-gray-300 rounded-lg py-3 px-4 pr-10 focus:border-primary focus:outline-none"
+            >
+            <svg class="w-5 h-5 text-gray-400 absolute right-3 top-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!--liste des reser-->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Carte Réservation 1 -->
+        <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition cursor-pointer">
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="font-bold text-primary text-lg">Réservation : N°12345</h3>
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">Active</span>
+            </div>
+            
+            <div class="space-y-2 mb-4">
+                <p class="text-sm"><strong>Zone:</strong> Zone A - Niveau 1</p>
+                <p class="text-sm"><strong>Place:</strong> A7</p>
+                <p class="text-sm"><strong>Date:</strong> 10/11/2025 à 10:00 h</p>
+                <p class="text-sm"><strong>Durée:</strong> 2 heures</p>
+            </div>
+
+            <div class="flex space-x-2">
+                <button onclick="window.location.href='scanner.html'" class="flex-1 bg-[#DC143C] text-white py-2 rounded-lg text-sm font-semibold hover:bg-[#B01030] transition">
+                    Scanner QR
+                </button>
+            </div>
+        </div>
+
+        <!-- Carte Réservation 2 -->
+        <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition cursor-pointer">
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="font-bold text-primary text-lg">Réservation : N°247558</h3>
+                <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full">Terminée</span>
+            </div>
+            
+            <div class="space-y-2 mb-4">
+                <p class="text-sm"><strong>Zone:</strong> Zone UK - Niveau 2</p>
+                <p class="text-sm"><strong>Place:</strong> UK12</p>
+                <p class="text-sm"><strong>Date:</strong> 15/11/2025 à 08:00 h</p>
+                <p class="text-sm"><strong>Durée:</strong> 3 heures</p>
+            </div>
+
+           
+        </div>
+
+        <!-- Carte Réservation 3 -->
+        <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition cursor-pointer">
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="font-bold text-primary text-lg">Réservation : N°247560</h3>
+                <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full">Terminée</span>
+            </div>
+            
+            <div class="space-y-2 mb-4">
+                <p class="text-sm"><strong>Zone:</strong> Zone B - Niveau 1</p>
+                <p class="text-sm"><strong>Place:</strong> B15</p>
+                <p class="text-sm"><strong>Date:</strong> 08/11/2025 à 14:30 h</p>
+                <p class="text-sm"><strong>Durée:</strong> 1 heure</p>
+            </div>
+ 
+        </div>
+
+        <!-- Carte Réservation 4 -->
+        <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition cursor-pointer">
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="font-bold text-primary text-lg">Réservation : N°247562</h3>
+                <span class="bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full">À venir</span>
+            </div>
+            
+            <div class="space-y-2 mb-4">
+                <p class="text-sm"><strong>Zone:</strong> Zone C - Niveau 2</p>
+                <p class="text-sm"><strong>Place:</strong> C8</p>
+                <p class="text-sm"><strong>Date:</strong> 20/11/2025 à 09:00 h</p>
+                <p class="text-sm"><strong>Durée:</strong> 4 heures</p>
+            </div>
+
+            <div class="flex space-x-2">
+                <button onclick="window.location.href='reservation.html'" class="flex-1 bg-[#DC143C] text-white py-2 rounded-lg text-sm font-semibold hover:bg-[#B01030] transition">
+                    Modifier
+                </button>
+            </div>
+        </div>
+
+        <!-- Carte Réservation 5 -->
+        <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition cursor-pointer">
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="font-bold text-primary text-lg">Réservation : N°247540</h3>
+                <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full">Terminée</span>
+            </div>
+            
+            <div class="space-y-2 mb-4">
+                <p class="text-sm"><strong>Zone:</strong> Zone A - Niveau 1</p>
+                <p class="text-sm"><strong>Place:</strong> A3</p>
+                <p class="text-sm"><strong>Date:</strong> 01/11/2025 à 11:00 h</p>
+                <p class="text-sm"><strong>Durée:</strong> 2 heures</p>
+            </div>
+        </div>
+
+        <!-- Carte Réservation 6 -->
+        <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition cursor-pointer">
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="font-bold text-primary text-lg">Réservation : N°247535</h3>
+                <span class="bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full">Annulée</span>
+            </div>
+            
+            <div class="space-y-2 mb-4">
+                <p class="text-sm"><strong>Zone:</strong> Zone D - Niveau 3</p>
+                <p class="text-sm"><strong>Place:</strong> D20</p>
+                <p class="text-sm"><strong>Date:</strong> 28/10/2025 à 16:00 h</p>
+                <p class="text-sm"><strong>Durée:</strong> 1.5 heures</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bouton Nouvelle Réservation -->
+    <div class="mt-10 text-center">
+        <button onclick="window.location.href='reservation.html'" class="bg-[#DC143C] text-white py-3 px-8 rounded-lg font-bold text-lg hover:bg-[#B01030] transition shadow-lg">
+            + Créer une nouvelle réservation
+        </button>
+    </div>
+
+</main>
+</div>
+
+</body>
+</html>
