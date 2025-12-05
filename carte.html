@@ -39,13 +39,13 @@
       <a class="block px-4 py-2 rounded hover:bg-white/10">Mes réservations</a>
       <a href="favoris.html" class="block px-4 py-2 rounded hover:bg-white/10 font-semibold mt-6">Liste des favoris</a>
       <a href="carte.html" class="block px-4 py-2 rounded bg-white text-primary font-semibold">Carte du parking</a>
-      <a class="block px-4 py-2 rounded hover:bg-white/10 font-semibold mt-6">Dashboard</a>
+      <a href="Dashboard.html" class="block px-4 py-2 rounded hover:bg-white/10 font-semibold mt-6">Dashboard</a>
       <a class="block px-4 py-2 rounded hover:bg-white/10">Sécurité du parking</a>
-      <a class="block px-4 py-2 rounded hover:bg-white/10">Historique</a>
-      <a class="block px-4 py-2 rounded hover:bg-white/10">Rapport</a>
-      <a class="block px-4 py-2 rounded hover:bg-white/10">Messagerie</a>
+      <a href="Historique.html" class="block px-4 py-2 rounded hover:bg-white/10">Historique</a>
+      <a href="Rapport.html" class="block px-4 py-2 rounded hover:bg-white/10">Rapport</a>
+      <a href="Messagerie.html" class="block px-4 py-2 rounded hover:bg-white/10">Messagerie</a>
       <a class="block px-4 py-2 rounded hover:bg-white/10">Guide de sécurité</a>
-      <a class="block px-4 py-2 rounded hover:bg-white/10">Ma véhicule</a>
+      <a href="Mavehicule.html" class="block px-4 py-2 rounded hover:bg-white/10">Ma véhicule</a>
     </nav>
   </div>
 
@@ -58,17 +58,31 @@
 <!-- CONTENU -->
 <main class="flex-1 px-14 py-10">
 
-  <div class="flex justify-between mb-8">
+  <div class="flex justify-between items-start mb-8">
+
+    <!-- TITRE -->
     <div>
-      <h1 class="text-4xl font-bold">Carte du parking</h1>
-      <p class="text-gray-600">Consultez les zones du parking</p>
+        <h1 class="text-4xl font-bold">Carte du parking</h1>
+        <p class="text-gray-600">Consultez les zones du parking</p>
     </div>
 
-    <button id="follow-btn"
-            class="bg-primary text-white px-8 py-3 rounded-xl shadow font-semibold">
-      ❤ Suivre
-    </button>
-  </div>
+    <!-- LOGO + BOUTON -->
+    <div class="flex flex-col items-end gap-2">
+        
+        <!-- LOGO ESPRIT AU-DESSUS DU BOUTON -->
+        <img src="assets/images/logo.png"
+             class="w-28 object-contain"
+             alt="logo esprit">
+
+        <!-- BOUTON -->
+        <button id="follow-btn"
+                class="bg-primary text-white px-8 py-3 rounded-xl shadow font-semibold">
+            ❤ Suivre
+        </button>
+
+    </div>
+</div>
+
 
   <!-- DROPDOWN ZONES -->
   <div class="relative bg-white rounded-2xl shadow p-6 mb-8">
