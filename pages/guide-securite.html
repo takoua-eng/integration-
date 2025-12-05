@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESPRIT Parking - Sécurité</title>
+    <!-- Tailwind CSS Compiled -->
+    <link rel="stylesheet" href="../output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ===== SIDEBAR ===== -->
+    <div class="flex">
+    <aside class="w-64 bg-[#DC143C] text-white shadow-md min-h-screen p-6 relative">
+
+        <div class="flex items-center space-x-3 mb-10">
+            <div class="bg-white text-[#DC143C] rounded-lg w-10 h-10 flex items-center justify-center font-bold">
+                P
+            </div>
+            <div class="text-xl font-bold">ESPRIT Parking</div>
+        </div>
+
+        <nav class="space-y-2 font-semibold">
+            <p class="uppercase text-sm text-white">Réserver</p>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+
+            <p class="uppercase text-sm text-white mt-4">Liste des favoris</p>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Carte du parking</a>
+
+            <p class="uppercase text-sm text-white mt-4">Dashboard</p>
+            <a href="parkinging-esprit.html" class="block py-2 px-3 rounded hover:bg-white/20">Carte de parking</a>
+            <a href="profil.html" class="block py-2 px-3 rounded hover:bg-white/20">Profil</a>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Historique</a>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Rapport</a>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Messagerie</a>
+            <a href="guide-securite.html" class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Ma véhicule</a>
+        </nav>
+
+        <div class="absolute bottom-1 left-1 flex items-center space-x-6">
+            <img src="../assets/images/profil.jpg" class="w-11 h-11 rounded-full border border-[#DC143C]">
+            <p class="font-bold">Profil</p>
+        </div>
+
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="flex-1 p-8">
+        <!-- Header -->
+        <header class="mb-8">
+            <div class="flex items-center justify-between flex-wrap gap-4">
+                <h1 class="text-3xl font-bold" style="font-family: 'Poppins', sans-serif; color: var(--dark-text);">Guide Sécurité</h1>
+                <div class="text-right">
+                    <div class="text-esprit-red font-bold text-sm" style="color: var(--crimson);">esprit</div>
+                    <div class="text-xs text-gray-600">HONGRIE UNITED UNIVERSITIES</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Top Cards Section -->
+        <div class="grid grid-1 lg:grid-cols-3 gap-6 mb-8 grid-3">
+            <!-- Éclairage Card -->
+            <div class="card-container">
+                <h3 class="card-title">Éclairage</h3>
+                <div class="flex items-center justify-center mb-4">
+                    <svg class="w-[100px] h-[100px] text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.477.859h4z"/>
+                    </svg>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="stars">
+                        <svg class="star" viewBox="0 0 21 17" fill="none"><path d="M10.5 0L12.8574 6.21885H20.4861L14.3143 10.0623L16.6717 16.2812L10.5 12.4377L4.32825 16.2812L6.68565 10.0623L0.513906 6.21885H8.14257L10.5 0Z" fill="#4CAF50"/></svg>
+                        <svg class="star" viewBox="0 0 21 17" fill="none"><path d="M10.5 0L12.8574 6.21885H20.4861L14.3143 10.0623L16.6717 16.2812L10.5 12.4377L4.32825 16.2812L6.68565 10.0623L0.513906 6.21885H8.14257L10.5 0Z" fill="#4CAF50"/></svg>
+                        <svg class="star" viewBox="0 0 21 17" fill="none"><path d="M10.5 0L12.8574 6.21885H20.4861L14.3143 10.0623L16.6717 16.2812L10.5 12.4377L4.32825 16.2812L6.68565 10.0623L0.513906 6.21885H8.14257L10.5 0Z" fill="#4CAF50"/></svg>
+                        <svg class="star" viewBox="0 0 21 17" fill="none"><path d="M10.5 0L12.8574 6.21885H20.4861L14.3143 10.0623L16.6717 16.2812L10.5 12.4377L4.32825 16.2812L6.68565 10.0623L0.513906 6.21885H8.14257L10.5 0Z" fill="#4CAF50"/></svg>
+                        <svg class="star" viewBox="0 0 21 17" fill="none"><path d="M10.5 0L12.8574 6.21885H20.4861L14.3143 10.0623L16.6717 16.2812L10.5 12.4377L4.32825 16.2812L6.68565 10.0623L0.513906 6.21885H8.14257L10.5 0Z" fill="#4CAF50"/></svg>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+                <p class="card-description" style="margin-top: 8px;">Niveau Élevé</p>
+            </div>
+
+            <!-- Caméras Card -->
+            <div class="card-container">
+                <h3 class="card-title">Caméras</h3>
+                <div class="flex items-center justify-center mb-4">
+                    <svg class="w-[100px] h-[100px] text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0019 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                    </svg>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <svg class="w-[59px] h-8 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <div style="background-color: var(--success); border-radius: 16px; padding: 6px 16px; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);">
+                        <span style="color: white; font-family: 'Abyssinica SIL', serif; font-size: 18px;">Actives : Oui</span>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Risques météo Card -->
+            <div class="card-container">
+                <h3 class="card-title">Risques météo</h3>
+                <div class="flex flex-col items-center justify-center h-full">
+                    <svg class="w-[100px] h-[100px] text-blue-500 mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"/>
+                    </svg>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-[69px] h-[42px] text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        <p style="color: black; font-family: 'Abyssinica SIL', serif; font-size: 18px;">Aucune Alerte</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conseil du jour Section -->
+        <section class="mb-8">
+            <h2 class="section-title">Conseil du jour</h2>
+            <div class="alert-box">
+                "Utilisez le trajet le mieux éclairé au-delà de 18h."
+            </div>
+            <button class="cta-button">Voir le trajet le plus sûr</button>
+        </section>
+
+        <!-- Security Tools Section -->
+        <section class="mb-8">
+            <h2 class="section-title">Les outils de sécurité disponibles</h2>
+            
+            <!-- First Row -->
+            <div class="grid grid-1 lg:grid-cols-3 gap-6 mb-6 grid-3">
+                <!-- Mode retour sécurisé -->
+                <div class="card-container">
+                    <div class="flex items-start gap-2 mb-4">
+                        <div class="icon-box">
+                            <svg class="w-6 h-6" viewBox="0 0 25 30" fill="none">
+                                <path d="M15.2769 7.39437L21.4552 14.5535L15.5019 21.9008L14.0603 20.2303L17.6323 15.8219L5.29847 16.0132L5.37344 20.8486L3.35151 20.88L3.23905 13.6268L17.5948 13.4042L13.8878 9.10873L15.2769 7.39437Z" fill="#1D1B20"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Mode retour sécurisé</h3>
+                    </div>
+                    <p class="card-description">Trajet recommandé en temps réel Basé sur l'éclairage, caméras et niveau de sécurité.</p>
+                </div>
+
+                <!-- Chemin le plus sûr -->
+                <div class="card-container">
+                    <div class="flex items-start gap-2 mb-4">
+                        <div class="icon-box">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 12C12.55 12 13.0208 11.8042 13.4125 11.4125C13.8042 11.0208 14 10.55 14 10C14 9.45 13.8042 8.97917 13.4125 8.5875C13.0208 8.19583 12.55 8 12 8C11.45 8 10.9792 8.19583 10.5875 8.5875C10.1958 8.97917 10 9.45 10 10C10 10.55 10.1958 11.0208 10.5875 11.4125C10.9792 11.8042 11.45 12 12 12ZM12 22C9.31667 19.7167 7.3125 17.5958 5.9875 15.6375C4.6625 13.6792 4 11.8667 4 10.2C4 7.7 4.80417 5.70833 6.4125 4.225C8.02083 2.74167 9.88333 2 12 2C14.1167 2 15.9792 2.74167 17.5875 4.225C19.1958 5.70833 20 7.7 20 10.2C20 11.8667 19.3375 13.6792 18.0125 15.6375C16.6875 17.5958 14.6833 19.7167 12 22Z" fill="#1D1B20"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Chemin le plus sûr</h3>
+                    </div>
+                    <p class="card-description">Trajet  recommendé en Temps réel Basé sur l'éclairage , caméra et niveau de sécurité</p>
+                </div>
+
+                <!-- Zones sûres -->
+                <div class="card-container">
+                    <div class="flex items-start gap-2 mb-4">
+                        <div class="icon-box">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                <path d="M8 18L12 14.95L16 18L14.5 13.05L18.5 10.2H13.6L12 5L10.4 10.2H5.5L9.5 13.05L8 18ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z" fill="#1D1B20"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Zones sûres</h3>
+                    </div>
+                    <p class="card-description">Carte des zones à risque Visualisation des niveaux de sécurité par secteur.</p>
+                </div>
+            </div>
+
+            <!-- Second Row -->
+            <div class="grid grid-1 lg:grid-cols-3 gap-6 grid-3">
+                <!-- Signalement incident -->
+                <div class="card-container">
+                    <h3 class="card-title">Signalement incident</h3>
+                    <p class="card-description">Déclarer un problème rapodement Véhicule, personne ou objet suspect.</p>
+                </div>
+
+                <!-- Accompagnement virtuel -->
+                <div class="card-container">
+                    <div class="flex items-start gap-2 mb-4">
+                        <div class="icon-box">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 12C10.9 12 9.95833 11.6083 9.175 10.825C8.39167 10.0417 8 9.1 8 8C8 6.9 8.39167 5.95833 9.175 5.175C9.95833 4.39167 10.9 4 12 4C13.1 4 14.0417 4.39167 14.825 5.175C15.6083 5.95833 16 6.9 16 8C16 9.1 15.6083 10.0417 14.825 10.825C14.0417 11.6083 13.1 12 12 12ZM4 20V17.2C4 16.6333 4.14583 16.1125 4.4375 15.6375C4.72917 15.1625 5.11667 14.8 5.6 14.55C6.63333 14.0333 7.68333 13.6458 8.75 13.3875C9.81667 13.1292 10.9 13 12 13C13.1 13 14.1833 13.1292 15.25 13.3875C16.3167 13.6458 17.3667 14.0333 18.4 14.55C18.8833 14.8 19.2708 15.1625 19.5625 15.6375C19.8542 16.1125 20 16.6333 20 17.2V20H4ZM6 18H18V17.2C18 17.0167 17.9542 16.85 17.8625 16.7C17.7708 16.55 17.65 16.4333 17.5 16.35C16.6 15.9 15.6917 15.5625 14.775 15.3375C13.8583 15.1125 12.9333 15 12 15C11.0667 15 10.1417 15.1125 9.225 15.3375C8.30833 15.5625 7.4 15.9 6.5 16.35C6.35 16.4333 6.22917 16.55 6.1375 16.7C6.04583 16.85 6 17.0167 6 17.2V18ZM12 10C12.55 10 13.0208 9.80417 13.4125 9.4125C13.8042 9.02083 14 8.55 14 8C14 7.45 13.8042 6.97917 13.4125 6.5875C13.0208 6.19583 12.55 6 12 6C11.45 6 10.9792 6.19583 10.5875 6.5875C10.1958 6.97917 10 7.45 10 8C10 8.55 10.1958 9.02083 10.5875 9.4125C10.9792 9.80417 11.45 10 12 10Z" fill="#1D1B20"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Accompagnement virtuel</h3>
+                    </div>
+                    <p class="card-description">Trajet recommandé en temps réél Basé sur l'éclairage, caméras et niveau de sécurité</p>
+                </div>
+
+                <!-- Analyse caméra -->
+                <div class="card-container">
+                    <div class="flex items-start gap-2 mb-4">
+                        <div class="icon-box">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 20C3.45 20 2.975 19.8083 2.575 19.425C2.19167 19.025 2 18.55 2 18V6C2 5.45 2.19167 4.98333 2.575 4.6C2.975 4.2 3.45 4 4 4H16C16.55 4 17.0167 4.2 17.4 4.6C17.8 4.98333 18 5.45 18 6V10.5L22 6.5V17.5L18 13.5V18C18 18.55 17.8 19.025 17.4 19.425C17.0167 19.8083 16.55 20 16 20H4ZM4 18H16V6H4V18ZM4 18V6V18Z" fill="#1D1B20"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Analyse caméra</h3>
+                    </div>
+                    <p class="card-description">Analyse automatique des caméras Detection d'objets, comportements ou activités suspectes.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    </div>
+</body>
+</html>

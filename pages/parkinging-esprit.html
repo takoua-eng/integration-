@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESPRIT Parking - Carte du parking</title>
+    <!-- Tailwind CSS Compiled -->
+    <link rel="stylesheet" href="../output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ===== SIDEBAR ===== -->
+    <div class="flex">
+    <aside class="w-64 bg-[#DC143C] text-white shadow-md min-h-screen p-6 relative">
+
+        <div class="flex items-center space-x-3 mb-10">
+            <div class="bg-white text-[#DC143C] rounded-lg w-10 h-10 flex items-center justify-center font-bold">
+                P
+            </div>
+            <div class="text-xl font-bold">ESPRIT Parking</div>
+        </div>
+
+        <nav class="space-y-2 font-semibold">
+            <p class="uppercase text-sm text-white">Réserver</p>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+
+            <p class="uppercase text-sm text-white mt-4">Liste des favoris</p>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Carte du parking</a>
+
+            <p class="uppercase text-sm text-white mt-4">Dashboard</p>
+            <a href="parkinging-esprit.html" class="block py-2 px-3 rounded hover:bg-white/20" style="opacity: 1; font-weight: 700;">Carte de parking</a>
+            <a href="profil.html" class="block py-2 px-3 rounded hover:bg-white/20">Profil</a>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Historique</a>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Rapport</a>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Messagerie</a>
+            <a href="guide-securite.html" class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+            <a class="block py-2 px-3 rounded hover:bg-white/20">Ma véhicule</a>
+        </nav>
+
+        <div class="absolute bottom-1 left-1 flex items-center space-x-6">
+            <img src="../assets/images/profil.jpg" class="w-11 h-11 rounded-full border border-[#DC143C]">
+            <p class="font-bold">Profil</p>
+        </div>
+
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="flex-1 bg-white overflow-y-auto">
+            <!-- Header -->
+            <div class="p-6 border-b">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">Carte du parking</h1>
+                        <p class="text-gray-600 mt-1">en mode sécurité</p>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="font-bold text-sm" style="color: #8B0000;">esprit</div>
+                        <div class="flex flex-col gap-3">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                                <span class="text-sm text-gray-700">Afficher Discrets</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="toggleDiscrets" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                                <span class="text-sm text-gray-700">Afficher zones sures</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="toggleZones">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts -->
+            <div class="p-6 space-y-4">
+
+                <!-- Weather Alert -->
+                <div class="bg-white border border-yellow-300 rounded-lg p-4 flex items-start gap-3">
+                    <svg class="w-6 h-6 text-yellow-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <div>
+                        <p class="text-gray-900 font-medium">Alerte Orage : Risque de glissage au niveau --1</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parking Map -->
+            <div class="p-6">
+                <div class="bg-gray-200 rounded-lg p-6 relative" style="min-height: 500px;" id="parkingMapContainer">
+                    <!-- Dimming Overlay -->
+                    <div id="dimmingOverlay" class="absolute top-0 left-0 w-full h-full rounded-lg pointer-events-none transition-opacity duration-300" style="background-color: rgba(0, 0, 0, 0.2); z-index: 4; display: none;"></div>
+                    
+                    <!-- Path SVG Overlay -->
+                    <svg id="pathOverlay" class="absolute top-0 left-0 w-full h-full pointer-events-none" style="z-index: 5; display: none;">
+                        <defs>
+                            <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+                                <polygon points="0 0, 12 4, 0 8" fill="#4CAF50"/>
+                            </marker>
+                        </defs>
+                        
+                        <!-- Path shadow/glow (behind main path) -->
+                        <path id="pathLineGlow" stroke="#4CAF50" stroke-width="10" fill="none" stroke-dasharray="12,6" opacity="0.3" stroke-linecap="round">
+                            <animate attributeName="stroke-dashoffset" values="0;-18" dur="1s" repeatCount="indefinite"/>
+                        </path>
+                        
+                        <!-- Path line (main path) -->
+                        <path id="pathLine" stroke="#4CAF50" stroke-width="6" fill="none" stroke-dasharray="12,6" marker-end="url(#arrowhead)" stroke-linecap="round">
+                            <animate attributeName="stroke-dashoffset" values="0;-18" dur="1s" repeatCount="indefinite"/>
+                        </path>
+                        
+                        <!-- Outer glow for start point -->
+                        <circle id="startPointGlow" cx="0" cy="0" r="25" fill="#4CAF50" opacity="0.3">
+                            <animate attributeName="r" values="25;30;25" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Start point highlight circle -->
+                        <circle id="startPoint" cx="0" cy="0" r="15" fill="#4CAF50" opacity="0.8">
+                            <animate attributeName="r" values="15;20;15" dur="2s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Outer glow for destination -->
+                        <circle id="endPointGlow" cx="0" cy="0" r="30" fill="#4CAF50" opacity="0.4">
+                            <animate attributeName="r" values="30;35;30" dur="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Destination point highlight circle -->
+                        <circle id="endPoint" cx="0" cy="0" r="20" fill="#4CAF50" opacity="0.9">
+                            <animate attributeName="r" values="20;25;20" dur="1.5s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.9;0.5;0.9" dur="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                    </svg>
+                    <div class="flex gap-4">
+                        <!-- Main Parking Area -->
+                        <div class="flex-1 space-y-1">
+                            <!-- New Top Row - 11 spaces -->
+                            <div class="flex gap-1">
+                                <!-- Alert Spot with Hover -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center relative group cursor-pointer" style="width: 70px; height: 90px; z-index: 10;">
+                                    <img src="../assets/images/erreur.png" alt="Alert" class="w-10 h-10 object-contain">
+                                    <!-- Hover Alert Tooltip -->
+                                    <div class="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 bg-esprit-pink border border-red-200 rounded-lg p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[9999] shadow-2xl pointer-events-auto">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div class="flex items-start gap-3 flex-1">
+                                                <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                                    <span class="text-white font-bold">!</span>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-bold text-gray-900 mb-1">Détection d'Objet</h3>
+                                                    <p class="text-gray-700">Objet suspect détecté : Place A4</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Empty -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                <!-- Empty -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                <!-- Occupied -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                                    </svg>
+                                </div>
+                                <!-- Empty -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                <!-- Empty -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                <!-- Occupied -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                                    </svg>
+                                </div>
+                                <!-- Occupied -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                                    </svg>
+                                </div>
+                                 <!-- Discreet Empty -->
+                                 <div class="discreet-parking bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                 <!-- Discreet Empty -->
+                                 <div class="discreet-parking bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                 <!-- Discreet Empty -->
+                                 <div class="discreet-parking bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                            </div>
+
+                            <!-- Horizontal Lane -->
+                            <div class="h-8 bg-transparent border-t-2 border-b-2 border-dashed border-white flex items-center">
+                                <div class="flex-1"></div>
+                            </div>
+
+                            <!-- Top Row - 11 spaces -->
+                            <div class="flex gap-1">
+                                <!-- Zone Confidence Empty -->
+                                <div class="zone-confidence rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone de confiance</span>
+                                </div>
+                                <!-- Zone Confidence Empty -->
+                                <div class="zone-confidence rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone de confiance</span>
+                                </div>
+                                <!-- Occupied -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                                    </svg>
+                                </div>
+                                <!-- Zone Security Empty -->
+                                <div class="zone-security rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone de sécurité</span>
+                                </div>
+                                <!-- Zone Security Empty -->
+                                <div class="zone-security rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone de sécurité</span>
+                                </div>
+                                <!-- Zone Security Empty -->
+                                <div class="zone-security rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone de sécurité</span>
+                                </div>
+                                <!-- Zone Vigilance Empty -->
+                                <div class="zone-vigilance rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone à vigilance</span>
+                                </div>
+                                <!-- Zone Vigilance Empty -->
+                                <div class="zone-vigilance rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone à vigilance</span>
+                                </div>
+                                <!-- Zone Danger Empty -->
+                                <div class="zone-danger rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone dangereuse</span>
+                                </div>
+                                <!-- Zone Danger Empty -->
+                                <div class="zone-danger rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone dangereuse</span>
+                                </div>
+                                <!-- Zone Danger Empty -->
+                                <div class="zone-danger rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone dangereuse</span>
+                                </div>
+                            </div>
+
+                            <!-- Horizontal Lane -->
+                            <div class="h-8 bg-transparent border-t-2 border-b-2 border-dashed border-white flex items-center">
+                                <div class="flex-1"></div>
+                            </div>
+
+                            <!-- Middle Row - 7 spaces -->
+                            <div class="flex gap-1">
+                                <!-- Zone Confidence Empty -->
+                                <div class="zone-confidence rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone de confiance</span>
+                                </div>
+                                <!-- Occupied -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                                    </svg>
+                                </div>
+                                <!-- Zone Security Empty -->
+                                <div class="zone-security rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone de sécurité</span>
+                                </div>
+                                <!-- Zone Security Empty -->
+                                <div class="zone-security rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone de sécurité</span>
+                                </div>
+                                <!-- Zone Vigilance Empty -->
+                                <div class="zone-vigilance rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone à vigilance</span>
+                                </div>
+                                <!-- Zone Vigilance Empty -->
+                                <div class="zone-vigilance rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone à vigilance</span>
+                                </div>
+                                <!-- Zone Danger Empty -->
+                                <div class="zone-danger rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone dangereuse</span>
+                                </div>
+                            <!-- Empty -->
+                            <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                            <!-- Empty -->
+                             <!-- Empty -->
+                             <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                             <!-- Empty -->
+                              <!-- Empty -->
+                              <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                              <!-- Empty -->
+                               <!-- Empty -->
+                               <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                               <!-- Empty -->
+                            </div>
+
+                            <!-- Horizontal Lane -->
+                            <div class="h-8 bg-transparent border-t-2 border-b-2 border-dashed border-white flex items-center">
+                                <div class="flex-1"></div>
+                            </div>
+
+                             <!-- Bottom Row - 6 spaces -->
+                             <div class="flex gap-1">
+                                 <!-- Discreet Empty -->
+                                 <div class="discreet-parking bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                 <!-- Discreet Empty -->
+                                 <div class="discreet-parking bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                <!-- Occupied -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                                    </svg>
+                                </div>
+                                <!-- Occupied -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                                    </svg>
+                                </div>
+                                <!-- Zone Vigilance Empty -->
+                                <div class="zone-vigilance rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone à vigilance</span>
+                                </div>
+                                <!-- Zone Danger Empty -->
+                                <div class="zone-danger rounded-lg p-2 flex items-center justify-center bg-gray-300" style="width: 70px; height: 90px;">
+                                    <span class="zone-tooltip">Zone dangereuse</span>
+                                </div>
+                                <!-- Occupied -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                                    </svg>
+                                </div>
+                                <!-- Empty -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                <!-- Empty -->
+                                 <!-- Empty -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                <!-- Empty -->
+                                 <!-- Empty -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                <!-- Empty -->
+                                 <!-- Empty -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                <!-- Empty -->
+                                 <!-- Empty -->
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;"></div>
+                                <!-- Empty -->
+                            </div>
+                        </div>
+
+                        <!-- Vertical Driving Lane with Handicapped Parking -->
+                        <div class="flex flex-col items-center gap-1" style="width: 80px;">
+                            <!-- Top Arrow -->
+                            <div class="w-full h-12 border-l-2 border-r-2 border-dashed border-white flex items-center justify-center relative">
+                                <svg class="w-6 h-6 text-white absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="transform: rotate(-45deg);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                            
+                            <!-- New Top Handicapped Pair -->
+                            <div class="space-y-1">
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <img src="../assets/images/invalidite.png" alt="Handicapped parking" class="w-10 h-10 object-contain">
+                                </div>
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <img src="../assets/images/invalidite.png" alt="Handicapped parking" class="w-10 h-10 object-contain">
+                                </div>
+                            </div>
+
+                            <!-- Middle Lane Section -->
+                            <div class="w-full flex-1 border-l-2 border-r-2 border-dashed border-white"></div>
+
+                            <!-- Top Handicapped Pair -->
+                            <div class="space-y-1">
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <img src="../assets/images/invalidite.png" alt="Handicapped parking" class="w-10 h-10 object-contain">
+                                </div>
+                                <div class="bg-gray-300 rounded-lg p-2 flex items-center justify-center" style="width: 70px; height: 90px;">
+                                    <img src="../assets/images/invalidite.png" alt="Handicapped parking" class="w-10 h-10 object-contain">
+                                </div>
+                            </div>
+
+                            <!-- Middle Lane Section -->
+                            <div class="w-full flex-1 border-l-2 border-r-2 border-dashed border-white"></div>
+
+                            <!-- Bottom Handicapped Pair -->
+                           
+
+                            <!-- Bottom Arrow -->
+                            <div class="w-full h-12 border-l-2 border-r-2 border-dashed border-white flex items-center justify-center relative">
+                                <svg class="w-6 h-6 text-white absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="transform: rotate(45deg);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+
+                            <!-- Green Pin Icon -->
+                            <div class="mt-2 relative">
+                                <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                                <div class="absolute top-1 left-1/2 transform -translate-x-1/2">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-6 flex gap-4 relative" style="z-index: 10;">
+                    <button id="showPathBtn" style="background-color: #8B0000; color: white; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500; z-index: 10; pointer-events: auto; position: relative; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#A52A2A'" onmouseout="this.style.backgroundColor='#8B0000'">
+                        <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                        Afficher Chemin de plus Sur
+                    </button>
+                    <button onclick="openModal('secureReturnModal')" style="background-color: #8B0000; color: white; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500; z-index: 10; pointer-events: auto; position: relative; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#A52A2A'" onmouseout="this.style.backgroundColor='#8B0000'">
+                        <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                        Activer Mode Retour Sécurisé
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Secure Return Mode Modal -->
+    <div id="secureReturnModal" class="hidden fixed inset-0 flex items-center justify-center z-50" style="background-color: rgba(0, 0, 0, 0.3);">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <!-- Active Countdown View -->
+            <div id="activeCountdownView" class="hidden">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold mb-2">Mode retour sécurisé actif</h2>
+                    <div class="text-6xl font-bold mb-4" id="countdownDisplay" style="color: #8B0000;">00:00</div>
+                    <p class="text-gray-600 mb-4">Temps restant avant alerte</p>
+                    <div class="bg-gray-100 rounded-lg p-4 mb-4">
+                        <p class="text-sm text-gray-600 mb-2">Contact à prévenir:</p>
+                        <p class="font-semibold text-gray-800" id="contactDisplay">-</p>
+                    </div>
+                    <button id="endCountdownBtn" style="width: 100%; background-color: #16a34a; color: white; padding: 12px; border-radius: 8px; border: none; cursor: pointer; font-size: 16px; font-weight: 600; margin-bottom: 8px; pointer-events: auto; z-index: 10; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#15803d'" onmouseout="this.style.backgroundColor='#16a34a'">
+                        J'ai atteint la zone de sécurité
+                    </button>
+                    <button onclick="closeModal('secureReturnModal')" style="width: 100%; background-color: #d1d5db; color: #1f2937; padding: 12px; border-radius: 8px; border: none; cursor: pointer; font-size: 16px; font-weight: 600; pointer-events: auto; z-index: 10; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#9ca3af'" onmouseout="this.style.backgroundColor='#d1d5db'">
+                        Annuler
+                    </button>
+                </div>
+            </div>
+
+            <!-- Setup View -->
+            <div id="setupView">
+                <h2 class="text-2xl font-bold mb-4">Mode retour sécurisé</h2>
+                <p class="text-gray-600 mb-6">Tracking GPS + minuteur si aucune comfirmation d'arrivée envoie une alerte</p>
+                
+                <div class="mb-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span class="font-medium">choisir durée</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="duration-btn" style="padding: 8px 16px; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; background-color: transparent; color: #333; pointer-events: auto; z-index: 10; font-size: 14px; font-weight: 500;" data-duration="5" onmouseover="if(this.style.backgroundColor !== 'rgb(31, 41, 55)') this.style.backgroundColor='#f9fafb'" onmouseout="if(this.style.backgroundColor !== 'rgb(31, 41, 55)') this.style.backgroundColor='transparent'">5 min</button>
+                        <button class="duration-btn" style="padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; background-color: #1f2937; color: white; pointer-events: auto; z-index: 10; font-size: 14px; font-weight: 500;" data-duration="10">10 min</button>
+                        <button class="duration-btn" style="padding: 8px 16px; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; background-color: transparent; color: #333; pointer-events: auto; z-index: 10; font-size: 14px; font-weight: 500;" data-duration="15" onmouseover="if(this.style.backgroundColor !== 'rgb(31, 41, 55)') this.style.backgroundColor='#f9fafb'" onmouseout="if(this.style.backgroundColor !== 'rgb(31, 41, 55)') this.style.backgroundColor='transparent'">15 min</button>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                        <span class="font-medium">Personne a prevenir</span>
+                    </div>
+                    <div class="flex gap-2 mb-2">
+                        <input type="text" id="contactInput" placeholder="Ajouter un contact .." class="flex-1 px-4 py-2 border border-gray-300 rounded">
+                        <button id="addContactBtn" style="padding: 8px 16px; border-radius: 4px; cursor: pointer; background-color: #e5e7eb; border: none; pointer-events: auto; z-index: 10; font-size: 18px; font-weight: bold; color: #333;" onmouseover="this.style.backgroundColor='#d1d5db'" onmouseout="this.style.backgroundColor='#e5e7eb'">+</button>
+                    </div>
+                    <div id="contactList" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <button id="activateBtn" style="width: 100%; background-color: #8B0000; color: white; padding: 12px; border-radius: 8px; border: none; cursor: pointer; font-size: 16px; font-weight: 600; pointer-events: auto; z-index: 10; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#A52A2A'" onmouseout="this.style.backgroundColor='#8B0000'">
+                    Activer
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Close modal on outside click
+        document.getElementById('secureReturnModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal('secureReturnModal');
+            }
+        });
+
+        // Secure Return Mode functionality
+        let selectedDuration = 10; // Default 10 minutes
+        let contacts = [];
+        let countdownInterval = null;
+        let remainingTime = 0;
+
+        function updateContactList() {
+            const contactList = document.getElementById('contactList');
+            if (!contactList) return;
+            contactList.innerHTML = '';
+            contacts.forEach((contact, index) => {
+                const contactBadge = document.createElement('div');
+                contactBadge.className = 'bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm flex items-center gap-2';
+                contactBadge.innerHTML = `
+                    <span>${contact}</span>
+                    <button onclick="removeContact(${index})" class="text-blue-600 hover:text-blue-800">×</button>
+                `;
+                contactList.appendChild(contactBadge);
+            });
+        }
+
+        function startCountdown() {
+            const countdownDisplay = document.getElementById('countdownDisplay');
+            if (!countdownDisplay) return;
+            
+            updateCountdownDisplay();
+
+            countdownInterval = setInterval(function() {
+                remainingTime--;
+                updateCountdownDisplay();
+
+                if (remainingTime <= 0) {
+                    clearInterval(countdownInterval);
+                    // Time expired - trigger alert
+                    alert(`Temps écoulé! Les contacts suivants seront notifiés: ${contacts.join(', ')}`);
+                    endCountdown();
+                }
+            }, 1000);
+        }
+
+        function updateCountdownDisplay() {
+            const countdownDisplay = document.getElementById('countdownDisplay');
+            if (!countdownDisplay) return;
+            
+            const minutes = Math.floor(remainingTime / 60);
+            const seconds = remainingTime % 60;
+            countdownDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            // Change color when time is running low
+            if (remainingTime <= 60) {
+                countdownDisplay.style.color = '#dc2626';
+            } else {
+                countdownDisplay.style.color = '#8B0000';
+            }
+        }
+
+        function endCountdown() {
+            clearInterval(countdownInterval);
+            countdownInterval = null;
+            
+            const activeCountdownView = document.getElementById('activeCountdownView');
+            const setupView = document.getElementById('setupView');
+            const countdownDisplay = document.getElementById('countdownDisplay');
+            
+            if (activeCountdownView && setupView) {
+                // Switch back to setup view
+                activeCountdownView.classList.add('hidden');
+                setupView.classList.remove('hidden');
+            }
+            
+            // Reset
+            remainingTime = 0;
+            if (countdownDisplay) {
+                countdownDisplay.textContent = '00:00';
+                countdownDisplay.style.color = '#8B0000';
+            }
+        }
+
+        // Initialize when DOM is ready
+        function initSecureReturnMode() {
+            // Duration selection
+            const durationButtons = document.querySelectorAll('.duration-btn');
+            durationButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active style from all buttons
+                    document.querySelectorAll('.duration-btn').forEach(b => {
+                        b.style.backgroundColor = 'transparent';
+                        b.style.color = '#333';
+                        b.style.border = '1px solid #d1d5db';
+                    });
+                    // Add active style to clicked button
+                    this.style.backgroundColor = '#1f2937';
+                    this.style.color = 'white';
+                    this.style.border = 'none';
+                    selectedDuration = parseInt(this.dataset.duration);
+                });
+            });
+
+            // Add contact
+            const contactInput = document.getElementById('contactInput');
+            const addContactBtn = document.getElementById('addContactBtn');
+            const contactList = document.getElementById('contactList');
+            
+            if (!contactInput || !addContactBtn || !contactList) return;
+
+            function addContact() {
+                const contact = contactInput.value.trim();
+                if (contact && !contacts.includes(contact)) {
+                    contacts.push(contact);
+                    updateContactList();
+                    contactInput.value = '';
+                }
+            }
+
+            addContactBtn.addEventListener('click', addContact);
+            contactInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    addContact();
+                }
+            });
+
+            // Activate countdown
+            const activateBtn = document.getElementById('activateBtn');
+            const setupView = document.getElementById('setupView');
+            const activeCountdownView = document.getElementById('activeCountdownView');
+            const countdownDisplay = document.getElementById('countdownDisplay');
+            const contactDisplay = document.getElementById('contactDisplay');
+            const endCountdownBtn = document.getElementById('endCountdownBtn');
+            
+            if (!activateBtn || !setupView || !activeCountdownView || !countdownDisplay || !contactDisplay || !endCountdownBtn) return;
+
+            activateBtn.addEventListener('click', function() {
+                if (contacts.length === 0) {
+                    alert('Veuillez ajouter au moins un contact à prévenir');
+                    return;
+                }
+
+                // Switch to active countdown view
+                setupView.classList.add('hidden');
+                activeCountdownView.classList.remove('hidden');
+
+                // Display contact
+                contactDisplay.textContent = contacts.join(', ');
+
+                // Start countdown
+                remainingTime = selectedDuration * 60; // Convert to seconds
+                startCountdown();
+            });
+
+            // End countdown when reaching safe zone
+            endCountdownBtn.addEventListener('click', function() {
+                if (confirm('Confirmez-vous que vous avez atteint la zone de sécurité?')) {
+                    alert('Mode retour sécurisé désactivé. Vous êtes en sécurité!');
+                    endCountdown();
+                    closeModal('secureReturnModal');
+                }
+            });
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSecureReturnMode);
+        } else {
+            initSecureReturnMode();
+        }
+
+        // Make removeContact available globally
+        window.removeContact = function(index) {
+            contacts.splice(index, 1);
+            updateContactList();
+        };
+
+         // Toggle Discreet Parking
+         const toggleDiscrets = document.getElementById('toggleDiscrets');
+         if (toggleDiscrets) {
+             toggleDiscrets.addEventListener('change', function() {
+                 const discreetSpots = document.querySelectorAll('.discreet-parking');
+                 if (this.checked) {
+                     discreetSpots.forEach(spot => {
+                         spot.classList.add('show');
+                     });
+                 } else {
+                     discreetSpots.forEach(spot => {
+                         spot.classList.remove('show');
+                     });
+                 }
+             });
+             
+             // Initialize on page load
+             if (toggleDiscrets.checked) {
+                 const discreetSpots = document.querySelectorAll('.discreet-parking');
+                 discreetSpots.forEach(spot => {
+                     spot.classList.add('show');
+                 });
+             } else {
+                 const discreetSpots = document.querySelectorAll('.discreet-parking');
+                 discreetSpots.forEach(spot => {
+                     spot.classList.remove('show');
+                 });
+             }
+         }
+
+         // Toggle All Zones
+         const toggleZones = document.getElementById('toggleZones');
+         if (toggleZones) {
+             toggleZones.addEventListener('change', function() {
+                 const allZones = document.querySelectorAll('.zone-danger, .zone-confidence, .zone-security, .zone-vigilance');
+                 if (this.checked) {
+                     // Show all zones at the same time
+                     allZones.forEach(zone => {
+                         zone.classList.add('show');
+                     });
+                 } else {
+                     // Hide all zones
+                     allZones.forEach(zone => {
+                         zone.classList.remove('show');
+                     });
+                 }
+             });
+         }
+
+         // Show Path to Confidence Zone
+         const showPathBtn = document.getElementById('showPathBtn');
+         const pathOverlay = document.getElementById('pathOverlay');
+         const pathLine = document.getElementById('pathLine');
+         const pathLineGlow = document.getElementById('pathLineGlow');
+         const dimmingOverlay = document.getElementById('dimmingOverlay');
+         const startPoint = document.getElementById('startPoint');
+         const startPointGlow = document.getElementById('startPointGlow');
+         const endPoint = document.getElementById('endPoint');
+         const endPointGlow = document.getElementById('endPointGlow');
+         let pathVisible = false;
+
+         if (showPathBtn && pathOverlay && pathLine && pathLineGlow && dimmingOverlay && startPoint && endPoint) {
+             showPathBtn.addEventListener('click', function() {
+                 pathVisible = !pathVisible;
+                 
+                 if (pathVisible) {
+                     // Find the green pin (starting point) and nearest confidence zone
+                     const greenPinContainer = document.querySelector('.mt-2.relative');
+                     const confidenceZones = document.querySelectorAll('.zone-confidence');
+                     const mapContainer = document.getElementById('parkingMapContainer');
+                     
+                     if (greenPinContainer && confidenceZones.length > 0 && mapContainer) {
+                         // Get positions relative to parking map container
+                         const containerRect = mapContainer.getBoundingClientRect();
+                         const pinRect = greenPinContainer.getBoundingClientRect();
+                         
+                         // Find nearest confidence zone
+                         let nearestZone = null;
+                         let minDistance = Infinity;
+                         
+                         confidenceZones.forEach(zone => {
+                             const zoneRect = zone.getBoundingClientRect();
+                             const distance = Math.sqrt(
+                                 Math.pow(zoneRect.left - pinRect.left, 2) + 
+                                 Math.pow(zoneRect.top - pinRect.top, 2)
+                             );
+                             if (distance < minDistance) {
+                                 minDistance = distance;
+                                 nearestZone = zone;
+                             }
+                         });
+                         
+                         if (nearestZone) {
+                             const zoneRect = nearestZone.getBoundingClientRect();
+                             
+                             // Calculate relative positions within container
+                             const startX = pinRect.left - containerRect.left + pinRect.width / 2;
+                             const startY = pinRect.top - containerRect.top + pinRect.height / 2;
+                             const endX = zoneRect.left - containerRect.left + zoneRect.width / 2;
+                             const endY = zoneRect.top - containerRect.top + zoneRect.height / 2;
+                             
+                             // Find horizontal lanes (main driving lanes between rows) - avoid handicapped vertical lane
+                             const horizontalLanes = document.querySelectorAll('.h-8.bg-transparent.border-t-2');
+                             
+                             // Get the main parking area (left side, not the handicapped vertical lane on right)
+                             const mainParkingArea = document.querySelector('.flex-1.space-y-1');
+                             
+                             let pathData = '';
+                             
+                             if (horizontalLanes.length > 0 && mainParkingArea) {
+                                 const mainAreaRect = mainParkingArea.getBoundingClientRect();
+                                 const mainAreaRight = mainAreaRect.right - containerRect.left;
+                                 
+                                 // Find the horizontal lane that's just above the target zone
+                                 let targetLaneY = endY - 50; // Default to slightly above target
+                                 horizontalLanes.forEach(lane => {
+                                     const laneRect = lane.getBoundingClientRect();
+                                     const laneY = laneRect.top - containerRect.top + laneRect.height / 2;
+                                     // Find the lane that's above the target zone
+                                     if (laneY < endY && laneY > targetLaneY) {
+                                         targetLaneY = laneY;
+                                     }
+                                 });
+                                 
+                                 // If no lane found above, use the one at target level
+                                 if (targetLaneY === endY - 50) {
+                                     horizontalLanes.forEach(lane => {
+                                         const laneRect = lane.getBoundingClientRect();
+                                         const laneY = laneRect.top - containerRect.top + laneRect.height / 2;
+                                         if (Math.abs(laneY - endY) < 30) {
+                                             targetLaneY = laneY;
+                                         }
+                                     });
+                                 }
+                                 
+                                 // Path following roads (avoiding handicapped area):
+                                 // 1. Start from green pin (bottom right)
+                                 // 2. Move left to edge of main parking area (avoiding handicapped vertical lane)
+                                 // 3. Move up to horizontal lane level
+                                 // 4. Move left along horizontal lane to target zone
+                                 
+                                 // First, move left from green pin to edge of main parking area
+                                 const waypoint1X = mainAreaRight; // Move to main area edge (avoiding handicapped lane)
+                                 const waypoint1Y = startY; // Stay at start Y
+                                 
+                                 // Then move up to horizontal lane level
+                                 const waypoint2X = mainAreaRight; // Stay at main area edge
+                                 const waypoint2Y = targetLaneY; // Move up to horizontal lane level
+                                 
+                                 // Finally, move left along horizontal lane to target
+                                 const waypoint3X = endX; // Move left to target X
+                                 const waypoint3Y = targetLaneY; // Stay at horizontal lane level
+                                 
+                                 // Create path following roads: Start -> Move left to main area -> Move up -> Move left to target
+                                 pathData = `M ${startX} ${startY} L ${waypoint1X} ${waypoint1Y} L ${waypoint2X} ${waypoint2Y} L ${waypoint3X} ${waypoint3Y} L ${endX} ${endY}`;
+                             } else {
+                                 // Fallback: simple path if lanes not found
+                                 pathData = `M ${startX} ${startY} L ${endX} ${endY}`;
+                             }
+                             
+                             // Set path data for both line and glow
+                             pathLine.setAttribute('d', pathData);
+                             pathLineGlow.setAttribute('d', pathData);
+                             
+                             // Update start point position
+                             startPoint.setAttribute('cx', startX);
+                             startPoint.setAttribute('cy', startY);
+                             startPointGlow.setAttribute('cx', startX);
+                             startPointGlow.setAttribute('cy', startY);
+                             
+                             // Update end point position
+                             endPoint.setAttribute('cx', endX);
+                             endPoint.setAttribute('cy', endY);
+                             endPointGlow.setAttribute('cx', endX);
+                             endPointGlow.setAttribute('cy', endY);
+                             
+                             // Show overlays
+                             pathOverlay.style.display = 'block';
+                             dimmingOverlay.style.display = 'block';
+                             
+                             // Highlight the target confidence zone with stronger effect
+                             nearestZone.style.boxShadow = '0 0 20px 8px rgba(76, 175, 80, 0.8), inset 0 0 20px rgba(76, 175, 80, 0.3)';
+                             nearestZone.style.transition = 'box-shadow 0.3s';
+                             nearestZone.style.border = '3px solid #4CAF50';
+                             nearestZone.style.zIndex = '6';
+                             
+                             // Add pulsing animation to target zone
+                             nearestZone.style.animation = 'pulse-highlight 2s ease-in-out infinite';
+                         }
+                     }
+                 } else {
+                     // Hide path
+                     pathOverlay.style.display = 'none';
+                     dimmingOverlay.style.display = 'none';
+                     
+                     // Remove highlight from all confidence zones
+                     const confidenceZones = document.querySelectorAll('.zone-confidence');
+                     confidenceZones.forEach(zone => {
+                         zone.style.boxShadow = '';
+                         zone.style.border = '';
+                         zone.style.zIndex = '';
+                         zone.style.animation = '';
+                     });
+                 }
+             });
+        }
+    </script>
+    </main>
+    </div>
+</body>
+</html>
