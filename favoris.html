@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liste des favoris | ESPRIT Parking</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#E11D48",
+            bgpage: "#FEF2F2",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-bgpage">
+
+<div class="flex min-h-screen">
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar"
+         class="w-72 bg-gradient-to-b from-primary to-red-800 text-white p-6 flex flex-col justify-between
+                hidden md:flex fixed md:static inset-y-0 left-0 z-40">
+
+    <div>
+      <div class="flex items-center gap-3 mb-10 border-b border-white/30 pb-4">
+        <div class="bg-white text-primary font-bold rounded-lg w-10 h-10 flex items-center justify-center">P</div>
+        <div>
+          <p class="font-bold">ESPRIT</p>
+          <p class="text-sm opacity-80">Parking</p>
+        </div>
+      </div>
+
+      <nav class="space-y-2 text-sm">
+        <a class="block px-4 py-2 rounded hover:bg-white/10 font-semibold mt-6">Réserver</a>
+        <a class="block px-4 py-2 rounded hover:bg-white/10">Mes réservations</a>
+
+        <a href="favoris.html"
+           class="block px-4 py-2 rounded bg-white text-primary font-semibold mt-6">
+          Liste des favoris
+        </a>
+
+        <a href="carte.html"
+           class="block px-4 py-2 rounded hover:bg-white/10">
+          Carte du parking
+        </a>
+
+        <a href="Dashboard.html" class="block px-4 py-2 rounded hover:bg-white/10 font-semibold mt-6">Dashboard</a>
+        <a class="block px-4 py-2 rounded hover:bg-white/10">Sécurité du parking</a>
+        <a href="Historique.html" class="block px-4 py-2 rounded hover:bg-white/10">Historique</a>
+        <a href="Rapport.html" class="block px-4 py-2 rounded hover:bg-white/10">Rapport</a>
+        <a href="Messagerie.html" class="block px-4 py-2 rounded hover:bg-white/10">Messagerie</a>
+        <a class="block px-4 py-2 rounded hover:bg-white/10">Guide de sécurité</a>
+        <a href="Mavehicule.html" class="block px-4 py-2 rounded hover:bg-white/10">Ma véhicule</a>
+      </nav>
+    </div>
+
+    <div class="flex items-center gap-3 mt-10">
+      <img src="https://i.pravatar.cc/100"
+           class="w-12 h-12 rounded-full border border-white">
+      <span class="font-semibold">Profil</span>
+    </div>
+  </aside>
+
+  <!-- BOUTON MOBILE MENU -->
+  <button class="md:hidden fixed top-4 left-4 z-50 bg-primary text-white px-4 py-2 rounded-lg shadow"
+          onclick="document.getElementById('sidebar').classList.toggle('hidden')">
+    ☰ Menu
+  </button>
+
+  <!-- CONTENU -->
+  <main class="flex-1 px-6 md:px-14 py-10 md:ml-0 ml-0 w-full">
+
+    <!-- HEADER RESPONSIVE -->
+    <div class="flex flex-col md:flex-row justify-between md:items-start items-center mb-10 text-center md:text-left">
+
+      <!-- TITRE -->
+      <div>
+        <h1 class="text-4xl font-bold">Liste des favoris</h1>
+        <p class="text-gray-600">Consultez les zones favorites</p>
+      </div>
+
+      <!-- LOGO + BOUTON -->
+      <div class="flex flex-col items-center md:items-end gap-2 mt-4 md:mt-0">
+        <img src="assets/images/logo.png" class="w-24 md:w-28 object-contain" alt="logo esprit">
+
+        <button id="btn-notifs"
+                class="bg-primary text-white px-6 py-3 rounded-xl shadow font-semibold">
+          🔔 Notifications (1)
+        </button>
+      </div>
+    </div>
+
+    <!-- LES FAVORIS SERONT AJOUTÉS ICI PAR JS -->
+
+  </main>
+</div>
+
+<!-- POPUP -->
+<div id="popup"
+     class="fixed inset-0 bg-black/40 hidden flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl p-8 w-11/12 max-w-md relative text-center">
+    <button id="close"
+            class="absolute top-3 right-3 text-2xl text-primary font-bold">×</button>
+
+    <h2 class="text-xl font-bold mb-4">Place libre !</h2>
+    <p class="text-gray-600 mb-6">Une place est disponible en Bloc H - Zone A</p>
+
+    <a href="carte.html?zone=H-A"
+       class="bg-primary text-white px-8 py-3 rounded-xl inline-block">
+      Voir sur la carte
+    </a>
+  </div>
+</div>
+
+<script>
+/* === INITIALISATION DES FAVORIS === */
+if (!localStorage.getItem("favorites")) {
+  localStorage.setItem("favorites", JSON.stringify([
+    { id: "H-A", title: "Bloc H - Zone A", distance: "80 m", time: "~2 mins", available: true },
+    { id: "H-B", title: "Bloc H - Zone B", distance: "120 m", time: "~4 mins", available: false }
+  ]));
+}
+
+/* === POPUP === */
+const notifBtn = document.getElementById("btn-notifs");
+const popup = document.getElementById("popup");
+const closeBtn = document.getElementById("close");
+
+notifBtn.onclick = () => popup.classList.remove("hidden");
+closeBtn.onclick = () => popup.classList.add("hidden");
+popup.onclick = e => { if (e.target === popup) popup.classList.add("hidden"); };
+
+/* === FAVORIS === */
+function getFavorites() {
+  return JSON.parse(localStorage.getItem("favorites") || "[]");
+}
+function saveFavorites(favs) {
+  localStorage.setItem("favorites", JSON.stringify(favs));
+}
+
+function renderFavorites() {
+  const main = document.querySelector("main");
+
+  document.querySelectorAll(".favorite-card").forEach(e => e.remove());
+
+  getFavorites().forEach(zone => {
+    const div = document.createElement("div");
+    div.className =
+      "favorite-card bg-white rounded-2xl shadow p-6 md:p-8 mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6";
+
+    div.innerHTML = `
+      <div class="w-full">
+        <h2 class="font-bold text-xl">${zone.title}</h2>
+        <p class="text-gray-600 mt-2">📍 ${zone.distance} · ⏱ ${zone.time}</p>
+      </div>
+
+      <div class="flex gap-4 w-full md:w-auto justify-center md:justify-end">
+        <button class="btn-unfollow bg-primary text-white px-6 py-2 rounded-lg">
+          Ne plus suivre
+        </button>
+        ${
+          zone.available
+            ? `<a href="carte.html?zone=${zone.id}"
+                 class="border-2 border-primary text-primary px-6 py-2 rounded-lg">
+                 Places disponibles
+               </a>`
+            : `<span class="bg-red-100 text-red-600 px-6 py-2 rounded-lg border border-red-500 font-semibold">
+                 ZONE COMPLÈTE
+               </span>`
+        }
+      </div>
+    `;
+
+    div.querySelector(".btn-unfollow").onclick = () => {
+      saveFavorites(getFavorites().filter(z => z.id !== zone.id));
+      renderFavorites();
+    };
+
+    main.appendChild(div);
+  });
+}
+
+renderFavorites();
+</script>
+
+</body>
+</html>
