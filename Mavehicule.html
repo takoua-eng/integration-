@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Véhicule - Esprit Parking</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#DC143C',
+                    },
+                },
+            },
+        }
+    </script>
+
+</head>
+<body class="bg-white">
+
+<!-- ================== NAVBAR MOBILE ================== -->
+<div class="md:hidden flex justify-between items-center p-4 bg-primary text-white">
+    <div class="text-xl font-bold">ESPRIT Parking</div>
+    <button id="menuBtn" class="text-3xl font-bold">☰</button>
+</div>
+
+<!-- ================== MOBILE SIDEBAR ================== -->
+<div id="mobileMenu" class="fixed top-0 left-0 w-64 h-full bg-primary text-white p-6 transform -translate-x-full transition duration-300 z-50 md:hidden">
+
+    <!-- Close button -->
+    <button id="closeMenu" class="absolute top-4 right-4 text-2xl">✖</button>
+
+    <div class="mt-10 space-y-3 font-semibold">
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Réserver</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="favoris.html">Liste des favoris</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="carte.html">Carte de Parking</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Dashboard.html">Dashboard</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Historique.html">Historique</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Rapport.html">Rapport</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Messagerie.html">Messagerie</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded bg-white/20" href="Mavehicule.html">Ma Véhicule</a>
+    </div>
+
+    <div class="absolute bottom-4 left-4 flex items-center space-x-4">
+        <img src="assets/images/profil.jpg" class="w-12 h-12 rounded-full border border-white">
+        <p class="font-bold">Profil</p>
+    </div>
+</div>
+
+<div class="flex">
+
+    <!-- ================== SIDEBAR DESKTOP ================== -->
+    <aside class="hidden md:flex w-64 bg-primary text-white min-h-screen p-6 flex-col justify-between">
+
+        <div>
+            <div class="flex items-center space-x-3 mb-10">
+                <div class="bg-white text-primary rounded-lg w-10 h-10 flex items-center justify-center font-bold">P</div>
+                <div class="text-xl font-bold">ESPRIT Parking</div>
+            </div>
+
+            <nav class="space-y-2 font-semibold">
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Réserver</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="favoris.html">Liste des favoris</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="carte.html">Carte de Parking</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Dashboard.html">Dashboard</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Historique.html">Historique</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Rapport.html">Rapport</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Messagerie.html">Messagerie</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded bg-white/20" href="Mavehicule.html">Ma Véhicule</a>
+            </nav>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <img src="assets/images/profil.jpg" class="w-12 h-12 rounded-full border border-white">
+            <p class="font-bold">Profil</p>
+        </div>
+
+    </aside>
+
+    <!-- ================== MAIN CONTENT ================== -->
+    <main class="flex-1 p-5 md:p-10">
+
+        <!-- HEADER -->
+        <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
+            <h1 class="text-3xl font-bold">Ma Véhicule</h1>
+            <img src="assets/images/logo.png" class="w-28 md:w-32">
+        </div>
+
+        <!-- ====== GRID LAYOUT entièrement responsive ====== -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Infos véhicule -->
+            <div class="bg-[#F3F7F8] p-6 rounded-xl shadow-md">
+                <h2 class="text-xl font-bold mb-4">Informations du véhicule</h2>
+
+                <p><strong>Type :</strong> Voiture</p>
+                <p><strong>Marque :</strong> Renault</p>
+                <p><strong>Immatriculation :</strong> ----</p>
+                <p class="mb-4"><strong>Modèle :</strong> ----</p>
+
+                <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                    <button class="bg-primary text-white px-4 py-2 rounded-xl w-full sm:w-auto">Modifier info</button>
+                    <button class="px-4 py-2 rounded-xl border border-primary text-primary w-full sm:w-auto">
+                        Modifier véhicule
+                    </button>
+                </div>
+            </div>
+
+            <!-- Image véhicule -->
+            <div class="flex justify-center items-center">
+                <img src="assets/images/mavoiture.jpg" class="rounded-xl w-full max-w-[380px]">
+            </div>
+
+            <!-- ====== Vidéo + texte ====== -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 col-span-1 md:col-span-2">
+
+                <div>
+                    <img src="assets/images/tempsreel.png" class="rounded-xl w-full mb-2">
+                    <p class="text-center text-sm font-semibold">Caméra en temps réel</p>
+                </div>
+
+                <div class="bg-slate-100 p-6 rounded-xl shadow-md flex flex-col justify-between">
+                    <p class="text-center text-lg md:text-xl leading-relaxed">
+                        “Surveillance en temps réel, tranquillité d'esprit instantanée.
+                        Notre support technique est là pour vous.”
+                    </p>
+
+                    <button class="bg-primary text-white px-6 py-2 rounded-xl mt-6 mx-auto" href="Messagerie.html">
+                        Contact support technique
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- ===== CARTE ===== -->
+            <div class="col-span-1 md:col-span-2 bg-[#F3F7F8] p-6 rounded-xl shadow-md flex flex-col md:flex-row items-center md:space-x-6">
+                <p class="text-lg font-semibold text-center md:text-left">
+                    Voici Votre emplacement identifié par la carte :
+                </p>
+                <img src="assets/images/localisation.png" class="rounded-xl w-full md:w-80 h-40 object-cover mt-4 md:mt-0 md:ml-auto">
+            </div>
+
+        </div>
+    </main>
+
+</div>
+
+<!-- SCRIPT MENU MOBILE -->
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const closeMenu = document.getElementById("closeMenu");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("-translate-x-full");
+    });
+
+    closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.add("-translate-x-full");
+    });
+</script>
+
+</body>
+</html>

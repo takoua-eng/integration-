@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie - Esprit Parking</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#DC143C",
+                        soft: "#F4F4F4"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white">
+
+<!-- ================= MOBILE NAV ================= -->
+<div class="md:hidden flex justify-between items-center bg-primary text-white p-4">
+    <div class="flex items-center space-x-2">
+        <div class="bg-white text-primary p-2 rounded-lg font-bold">P</div>
+        <span class="font-bold text-lg">Esprit Parking</span>
+    </div>
+
+    <button id="openMenu" class="text-3xl font-bold">☰</button>
+</div>
+
+<!-- SIDEBAR MOBILE (overlay) -->
+<div id="mobileSidebar"
+     class="fixed inset-0 bg-black/50 z-40 hidden">
+    <aside class="w-64 bg-primary text-white h-full p-6 flex flex-col justify-between animate-slide-left">
+        <button id="closeMenu" class="text-2xl font-bold mb-6">✕</button>
+
+        <nav class="space-y-2 font-semibold">
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Réserver</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="favoris.html">Liste des favoris</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="carte.html">Carte de Parking</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Dashboard.html">Dashboard</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Historique.html">Historique</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Rapport.html">Rapport</a>
+                <a class="block py-2 px-3 rounded bg-white/20" href="Messagerie.html">Messagerie</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Mavehicule.html">Ma Véhicule</a>
+        </nav>
+    </aside>
+</div>
+
+<!-- ================== DESKTOP LAYOUT ================== -->
+<div class="flex min-h-screen">
+
+    <!-- SIDEBAR DESKTOP -->
+    <aside class="hidden md:flex w-64 bg-primary text-white min-h-screen p-6 flex-col justify-between">
+
+        <!-- LOGO -->
+        <div>
+            <div class="flex items-center space-x-3 mb-10">
+                <div class="bg-white text-primary rounded-lg w-10 h-10 flex items-center justify-center font-bold">P</div>
+                <div class="text-xl font-bold">ESPRIT Parking</div>
+            </div>
+
+            <!-- MENU -->
+            <nav class="space-y-2 font-semibold">
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Réserver</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="favoris.html">Liste des favoris</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="carte.html">Carte de Parking</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Dashboard.html">Dashboard</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Historique.html">Historique</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Rapport.html">Rapport</a>
+                <a class="block py-2 px-3 rounded bg-white/20" href="Messagerie.html">Messagerie</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Mavehicule.html">Ma Véhicule</a>
+            </nav>
+        </div>
+
+        <!-- PROFILE -->
+        <a href="profil.html" class="flex items-center space-x-4 hover:opacity-80 transition">
+            <img src="assets/images/profil.jpg" class="w-12 h-12 rounded-full border border-white">
+            <p class="font-bold">Profil</p>
+        </a>
+
+    </aside>
+
+    <!-- ================== MAIN CONTENT ================== -->
+    <main class="flex-1 p-4 md:p-8">
+
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+            <h1 class="text-2xl md:text-3xl font-bold">Messagerie</h1>
+            <img src="assets/images/logo.png"
+                 alt="logo"
+                 class="w-24 md:w-32 object-contain">
+        </div>
+
+        <!-- Destinataires -->
+        <div class="bg-gray-900/70 text-white flex flex-wrap justify-center md:justify-around py-3 rounded-lg mb-6 text-sm md:text-lg gap-2">
+            <span>Support Technique</span>
+            <span>Administration Parking</span>
+            <span>Notification Système</span>
+        </div>
+
+        <!-- Zone de messages -->
+        <div class="bg-[#F3F7F8] rounded-xl shadow p-4 md:p-6 h-auto md:h-[550px] flex flex-col justify-between">
+
+            <!-- Messages -->
+            <div class="space-y-5 overflow-y-auto pr-2 max-h-[350px] md:max-h-full">
+
+                <!-- Message reçu -->
+                <div class="flex items-start gap-3">
+                    <img src="assets/images/support technique.jpg" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
+                    <div class="bg-gray-100 px-4 py-2 rounded-xl text-sm max-w-xs md:max-w-xl">
+                        Bonjour ! Comment puis-je vous aider aujourd'hui ?
+                    </div>
+                </div>
+
+                <!-- Message envoyé -->
+                <div class="flex items-start gap-3 justify-end">
+                    <div class="bg-blue-200 px-4 py-2 rounded-xl text-sm max-w-xs md:max-w-xl">
+                        J'ai une question concernant ma place favorite
+                    </div>
+                    <img src="assets/images/profil.jpg" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
+                </div>
+
+                <!-- Réponse reçue -->
+                <div class="flex items-start gap-3">
+                    <img src="assets/images/support technique.jpg" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
+                    <div class="bg-gray-100 px-4 py-2 rounded-xl text-sm max-w-xs md:max-w-xl">
+                        Bien sûr, je suis là pour vous aider. Quelle est votre question ?
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Input -->
+            <div class="mt-6 flex items-center gap-3 md:gap-4 flex-wrap">
+                <img src="assets/images/profil.jpg" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
+
+                <input type="text"
+                       placeholder="Tapez votre message..."
+                       class="flex-1 bg-gray-100 border border-gray-300 rounded-xl px-4 py-2 md:py-3 text-sm">
+
+                <button class="bg-primary text-white font-bold px-4 py-2 md:px-6 md:py-3 rounded-xl hover:bg-red-700 transition">
+                    Envoyer
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+<script>
+    const menu = document.getElementById("mobileSidebar");
+    document.getElementById("openMenu").onclick = () => menu.classList.remove("hidden");
+    document.getElementById("closeMenu").onclick = () => menu.classList.add("hidden");
+</script>
+
+<style>
+    @keyframes slide-left {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(0); }
+    }
+    .animate-slide-left {
+        animation: slide-left 0.3s ease-out;
+    }
+</style>
+
+</body>
+</html>
