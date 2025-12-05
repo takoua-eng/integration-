@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Esprit Parking</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D3133C",
+                        soft: "#F3F7F8",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-white">
+
+<div class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- ======================= SIDEBAR ======================= -->
+    <aside id="sidebar"
+        class="w-full md:w-64 bg-primary text-white flex flex-col justify-between p-6 md:block hidden">
+
+        <!-- LOGO -->
+        <div>
+            <div class="flex items-center space-x-3 mb-10">
+                <div class="bg-white text-primary rounded-lg w-10 h-10 flex items-center justify-center font-bold">
+                    P
+                </div>
+                <div class="text-xl font-bold">ESPRIT Parking</div>
+            </div>
+
+            <!-- MENU -->
+            <nav class="space-y-4 font-semibold">
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Réserver</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Liste des favoris</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded bg-white/20" href="Dashboard.html">Dashboard</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Historique.html">Historique</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Rapport.html">Rapport</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Messagerie.html">Messagerie</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Mavehicule.html">Ma Véhicule</a>
+
+            </nav>
+        </div>
+
+        <!-- PROFILE -->
+        <a href="profil.html" class="flex items-center space-x-4 mt-10 hover:opacity-80 transition">
+            <img src="assets/images/profil.jpg" class="w-12 h-12 rounded-full border border-white" />
+            <p class="font-bold">Profil</p>
+        </a>
+
+    </aside>
+
+    <!-- === BOUTON MOBILE POUR LA SIDEBAR === -->
+    <button class="md:hidden bg-primary text-white p-4 w-full font-bold"
+        onclick="document.getElementById('sidebar').classList.toggle('hidden')">
+        ☰ Menu
+    </button>
+
+    
+    <!-- ======================= MAIN CONTENT ======================= -->
+    <main class="flex-1 p-6 md:p-10">
+
+        <!-- HEADER -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-5">
+            <div>
+                <h1 class="text-3xl font-bold">Dashboard</h1>
+                <p class="text-gray-500 mt-1">Surveillez votre véhicule en temps réel avec notre système de sécurité avancé</p>
+            </div>
+            <img src="assets/images/logo.png" alt="logo" class="w-20 md:w-28">
+        </div>
+
+
+        <!-- TOP ICON CARDS -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+
+            <div class="bg-soft p-6 rounded-xl text-center shadow">
+                <img src="assets/images/icone1.png" class="w-14 mx-auto mb-3">
+                <p class="font-semibold text-gray-700">225 places disponibles</p>
+            </div>
+
+            <div class="bg-soft p-6 rounded-xl text-center shadow">
+                <img src="assets/images/icone2.png" class="w-14 mx-auto mb-3">
+                <p class="font-semibold text-gray-700">Surveillance active</p>
+            </div>
+
+            <div class="bg-soft p-6 rounded-xl text-center shadow">
+                <img src="assets/images/icone3.png" class="w-14 mx-auto mb-3">
+                <p class="font-semibold text-gray-700">Caméras HD</p>
+            </div>
+
+            <div class="bg-soft p-6 rounded-xl text-center shadow">
+                <img src="assets/images/icone4.png" class="w-14 mx-auto mb-3">
+                <p class="font-semibold text-gray-700">Éclairage optimal</p>
+            </div>
+
+        </div>
+
+
+        <!-- ================== STATIONNEMENT ACTUEL ================== -->
+        <div class="bg-soft p-6 rounded-xl shadow mt-10">
+
+            <div class="flex items-center space-x-3 mb-4">
+                <img src="assets/images/icone6.png" class="w-10">
+                <h2 class="text-xl font-bold">Stationnement Actuel</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                <div>
+                    <p class="font-semibold">Place :</p>
+                    <p class="bg-white p-2 mt-1 rounded-lg shadow-sm inline-block">
+                        Bloc H - Zone A - A12
+                    </p>
+                </div>
+
+                <div>
+                    <p class="font-semibold">Début :</p>
+                    <p class="bg-white p-2 mt-1 rounded-lg shadow-sm inline-block">
+                        Aujourd’hui — 08:45
+                    </p>
+                </div>
+
+                <div>
+                    <p class="font-semibold">Durée :</p>
+                    <p class="bg-white p-2 mt-1 rounded-lg shadow-sm inline-block">
+                        3 h et 15 min
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ================== GRAPH + ACCES RAPIDE ================== -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
+
+            <!-- GRAPH -->
+            <div class="lg:col-span-2 bg-soft p-6 rounded-xl shadow">
+                <img src="assets/images/icone5.png" class="mx-auto w-60 md:w-72">
+                <div class="mt-4 space-y-2">
+                    <p class="flex items-center gap-2"><span class="w-3 h-3 bg-green-400 rounded-full"></span> Places sécurisées et éclairées</p>
+                    <p class="flex items-center gap-2"><span class="w-3 h-3 bg-orange-300 rounded-full"></span> Places à risque</p>
+                    <p class="flex items-center gap-2"><span class="w-3 h-3 bg-blue-400 rounded-full"></span> Places peu sécurisées</p>
+                </div>
+            </div>
+
+            <!-- ACCES RAPIDE -->
+            <div class="bg-soft p-6 rounded-xl shadow w-full lg:w-60">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <img src="assets/images/icone7.png" class="w-10 h-10">
+                    <h2 class="font-bold text-xl">Accès rapide</h2>
+                </div>
+
+                <div class="space-y-4">
+
+                    <a class="block bg-primary text-white text-center py-3 rounded-xl font-semibold" href="#">
+                        Carte de parking
+                    </a>
+
+                    <a class="block bg-primary text-white text-center py-3 rounded-xl font-semibold" href="#">
+                        Guide de Sécurité
+                    </a>
+
+                    <a class="block bg-primary text-white text-center py-3 rounded-xl font-semibold" href="Historique.html">
+                        Historique
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

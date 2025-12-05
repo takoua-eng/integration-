@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport - Esprit Parking</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#DC143C",
+                        soft: "#F4F4F4"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white">
+
+<div class="flex flex-col md:flex-row">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="w-full md:w-64 bg-primary text-white min-h-screen p-6 flex flex-col justify-between md:block hidden md:flex"
+           id="sidebar">
+
+        <!-- LOGO -->
+        <div>
+            <div class="flex items-center space-x-3 mb-10">
+                <div class="bg-white text-primary rounded-lg w-10 h-10 flex items-center justify-center font-bold">
+                    P
+                </div>
+                <div class="text-xl font-bold">ESPRIT Parking</div>
+            </div>
+
+            <!-- MENU -->
+            <nav class="space-y-2 font-semibold">
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Réserver</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Liste des favoris</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Dashboard.html">Dashboard</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Historique.html">Historique</a>
+                <a class="block py-2 px-3 rounded bg-white/20" href="Rapport.html">Rapport</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Messagerie.html">Messagerie</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Mavehicule.html">Ma Véhicule</a>
+            </nav>
+        </div>
+
+        <!-- PROFILE -->
+        <a href="profil.html" class="flex items-center space-x-4 hover:opacity-80 transition">
+            <img src="assets/images/profil.jpg" class="w-12 h-12 rounded-full border border-white">
+            <p class="font-bold">Profil</p>
+        </a>
+
+    </aside>
+
+    <!-- === BOUTON MOBILE POUR LA SIDEBAR === -->
+    <button class="md:hidden bg-primary text-white p-3 w-full font-bold"
+            onclick="document.getElementById('sidebar').classList.toggle('hidden')">
+        ☰ Menu
+    </button>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main class="flex-1 p-5 md:p-10">
+
+        <!-- HEADER -->
+        <div class="mb-10">
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <h1 class="text-3xl font-bold">Rapport</h1>
+
+                <div class="flex flex-col items-center">
+                    <img src="assets/images/logo.png" alt="logo" class="w-20 md:w-28">
+
+                    <button class="mt-2 border-2 border-primary text-primary px-4 py-2 rounded-xl font-bold hover:bg-primary hover:text-white transition">
+                        Export PDF
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CARDS -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+
+            <div class="bg-[#F3F7F8] shadow-md p-6 rounded-xl text-center">
+                <img src="assets/images/R1.png" class="mx-auto mb-3 w-16">
+                <p class="text-4xl font-bold">42</p>
+                <p class="text-gray-600 mt-2">Stationnements ce mois</p>
+            </div>
+
+            <div class="bg-[#F3F7F8] shadow-md p-6 rounded-xl text-center">
+                <img src="assets/images/R2.png" class="mx-auto mb-3 w-16">
+                <p class="text-3xl font-bold">72h</p>
+                <p class="text-gray-600 mt-2">Temps total</p>
+            </div>
+
+            <div class="bg-[#F3F7F8] shadow-md p-6 rounded-xl text-center">
+                <p class="text-5xl font-bold">Zone A</p>
+                <p class="text-gray-600 mt-2">Zone préférée</p>
+            </div>
+
+        </div>
+
+        <!-- ANALYSE + FACTURES -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- Analyse -->
+            <div class="lg:col-span-2 bg-[#F3F7F8] p-6 shadow rounded-xl">
+                <h2 class="font-bold text-xl mb-4">Analyse mensuelle</h2>
+
+                <p class="text-sm mb-2">Places favorites : Bloc H – Zone A (35%), Bloc G – Zone B (28%)</p>
+                <p class="text-sm mb-2">Durée moyenne : 2h 30min</p>
+                <p class="text-sm mb-2">Jours actifs : 22 jours</p>
+                <p class="text-sm mb-4">Économie estimée : utilisation optimale des zones gratuites</p>
+
+                <img src="assets/images/stat.png" class="rounded-lg mx-auto mt-3 w-full">
+            </div>
+
+            <!-- Factures -->
+            <div class="bg-[#F3F7F8] p-6 shadow rounded-xl">
+                <h2 class="font-bold text-xl mb-4">Mes Factures :</h2>
+
+                <div class="space-y-4">
+
+                    <div class="flex justify-between items-center bg-soft p-3 rounded-lg">
+                        <img src="assets/images/R3.png" class="w-8">
+                        <span>Mois Septembre</span>
+                        <img src="assets/images/t.png" class="w-8">
+                    </div>
+
+                    <div class="flex justify-between items-center bg-soft p-3 rounded-lg">
+                        <img src="assets/images/R4.png" class="w-8">
+                        <span>Mois Octobre</span>
+                        <img src="assets/images/t.png" class="w-8">
+                    </div>
+
+                    <div class="flex justify-between items-center bg-soft p-3 rounded-lg">
+                        <img src="assets/images/R5.png" class="w-8">
+                        <span>Mois Novembre</span>
+                        <img src="assets/images/t.png" class="w-8">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RECOMMANDATIONS -->
+        <div class="mt-10 bg-[#F3F7F8] shadow p-6 rounded-xl">
+            <h2 class="font-bold text-xl mb-4">Recommandations</h2>
+
+            <p class="text-sm mb-2">Zone A est disponible en moyenne de 08:00 à 09:00.</p>
+            <p class="text-sm mb-2">Zone B se remplit rapidement après 10:00.</p>
+            <p class="text-sm">Considérez la Zone C pour les stationnements longs (4h+).</p>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>

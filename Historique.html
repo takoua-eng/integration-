@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historique - Esprit Parking</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#DC143C",
+                        soft: "#F3F7F8",
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        /* Empêche le scroll horizontal */
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+<!-- ================= HEADER MOBILE ================= -->
+<header class="lg:hidden flex justify-between items-center p-4 bg-primary text-white">
+    <div class="font-bold text-xl">ESPRIT Parking</div>
+
+    <button id="menuBtn" class="text-3xl">
+        ☰
+    </button>
+</header>
+
+<!-- ================= SIDEBAR MOBILE ================= -->
+<div id="mobileMenu"
+     class="lg:hidden fixed top-0 left-0 w-64 h-full bg-primary text-white p-6 transform -translate-x-full transition-all duration-300 z-50 shadow-xl">
+
+    <button id="closeMenu" class="text-white text-3xl mb-6">×</button>
+
+    <nav class="space-y-3 font-medium">
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Réserver</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Liste des favoris</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Dashboard.html">Dashboard</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+                <a class="block py-2 px-3 rounded bg-white/20" href="Historique.html">Historique</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Rapport.html">Rapport</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Messagerie.html">Messagerie</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Mavehicule.html">Ma Véhicule</a>
+
+    </nav>
+</div>
+
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeMenu = document.getElementById("closeMenu");
+
+    menuBtn.onclick = () => mobileMenu.style.transform = "translateX(0)";
+    closeMenu.onclick = () => mobileMenu.style.transform = "translateX(-100%)";
+</script>
+
+<div class="flex">
+
+    <!-- ================= SIDEBAR DESKTOP ================= -->
+    <aside class="hidden lg:flex w-64 bg-primary text-white min-h-screen p-6 flex-col justify-between shadow-2xl">
+
+        <!-- Logo -->
+        <div>
+            <div class="flex items-center space-x-3 mb-10">
+                <div class="bg-white text-primary rounded-lg w-10 h-10 flex items-center justify-center font-bold shadow">
+                    P
+                </div>
+                <div class="text-xl font-bold tracking-wide">
+                    ESPRIT Parking
+                </div>
+            </div>
+
+            <nav class="space-y-2 font-medium">
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Réserver</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Liste des favoris</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Dashboard.html">Dashboard</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+                <a class="block py-2 px-3 rounded bg-white/20" href="Historique.html">Historique</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Rapport.html">Rapport</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Messagerie.html">Messagerie</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Mavehicule.html">Ma Véhicule</a>
+            </nav>
+        </div>
+
+        <!-- Profil -->
+        <a href="profil.html" class="flex items-center space-x-4 hover:opacity-80">
+            <img src="assets/images/profil.jpg" class="w-12 h-12 rounded-full border border-white shadow" />
+            <p class="font-semibold">Profil</p>
+        </a>
+
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="flex-1 p-6 md:p-10">
+
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-extrabold">Historique</h1>
+
+            <img src="assets/images/logo.png" class="w-24 md:w-32">
+        </div>
+
+        <!-- Responsive Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- ========== Historique Emplacements ========== -->
+            <div class="lg:col-span-2 bg-soft p-6 rounded-2xl shadow">
+
+                <h2 class="text-xl md:text-2xl font-bold mb-6">Historique des emplacements</h2>
+
+                <div class="space-y-4">
+
+                    <!-- Card -->
+                    <div class="bg-white p-5 rounded-xl shadow flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold text-lg">Bloc H – Zone A – A3</p>
+                            <p class="text-sm text-gray-600">Durée : 2h 30min</p>
+                            <p class="text-xs font-bold mt-1">22/10/2025</p>
+                        </div>
+                        <img src="assets/images/car.png" class="w-16 md:w-20">
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold text-lg">Bloc G – Zone B – B7</p>
+                            <p class="text-sm text-gray-600">Durée : 3h 15min</p>
+                            <p class="text-xs font-bold mt-1">21/10/2025</p>
+                        </div>
+                        <img src="assets/images/car.png" class="w-16 md:w-20">
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold text-lg">Bloc H – Zone A – A5</p>
+                            <p class="text-sm text-gray-600">Durée : 1h 45min</p>
+                            <p class="text-xs font-bold mt-1">20/10/2025</p>
+                        </div>
+                        <img src="assets/images/car.png" class="w-16 md:w-20">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== Historique Messages ========== -->
+            <div class="bg-soft p-6 rounded-2xl shadow">
+                <h2 class="text-xl md:text-2xl font-bold mb-6">Historique des messages</h2>
+
+                <div class="space-y-4">
+                    
+                    <div class="bg-white p-5 rounded-xl shadow">
+                        <p class="font-semibold text-gray-700">Support technique</p>
+                        <p class="text-sm mt-1">Le 14/11/2025</p>
+                        <button class="bg-primary text-white w-full py-2 rounded-xl mt-4">Voir les détails</button>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow">
+                        <p class="font-semibold text-gray-700">Administration Parking</p>
+                        <p class="text-sm mt-1">Le 02/10/2025</p>
+                        <button class="bg-primary text-white w-full py-2 rounded-xl mt-4">Voir les détails</button>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow">
+                        <p class="font-semibold text-gray-700">Support Technique</p>
+                        <p class="text-sm mt-1">Le 24/09/2025</p>
+                        <button class="bg-primary text-white w-full py-2 rounded-xl mt-4">Voir les détails</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>

@@ -5,92 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil - Esprit Parking</title>
 
-    <!-- Tailwind compilé -->
+    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="output.css">
-
 </head>
 
 <body class="bg-white text-black">
 
-<!-- ===== SIDEBAR ===== -->
-<div class="flex">
+<!-- ===== LAYOUT ===== -->
+<div class="flex flex-col md:flex-row min-h-screen">
 
-<aside class="w-64 bg-[#DC143C] text-white shadow-md min-h-screen p-6 relative">
+<!-- ===== MOBILE NAVBAR ===== -->
+<header class="md:hidden bg-[#DC143C] text-white p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+        <div class="bg-white text-[#DC143C] rounded-lg w-10 h-10 flex items-center justify-center font-bold">P</div>
+        <span class="text-xl font-bold">ESPRIT Parking</span>
+    </div>
+
+    <button id="menu-btn" class="text-white text-3xl">&#9776;</button>
+</header>
+
+<!-- ===== SIDEBAR ===== -->
+<aside id="mobile-menu"
+       class="hidden md:block md:w-64 bg-[#DC143C] text-white shadow-md p-6 absolute md:relative md:translate-x-0 transform -translate-x-full md:transform-none min-h-screen transition-all duration-300">
 
     <div class="flex items-center space-x-3 mb-10">
-        <div class="bg-white text-[#DC143C] rounded-lg w-10 h-10 flex items-center justify-center font-bold">
-            P
-        </div>
+        <div class="bg-white text-[#DC143C] rounded-lg w-10 h-10 flex items-center justify-center font-bold">P</div>
         <div class="text-xl font-bold">ESPRIT Parking</div>
     </div>
 
-    <nav class="space-y-2 font-semibold">
-        <p class="uppercase text-sm text-white">Réserver</p>
-        <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
+    <nav class="space-y-3 font-semibold text-sm">
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Réserver</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Mes Réservations</a>
 
-        <p class="uppercase text-sm text-white mt-4">Liste des favoris</p>
-        <a class="block py-2 px-3 rounded hover:bg-white/20">Carte du parking</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Liste des favoris</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
 
-        <p class="uppercase text-sm text-white mt-4">Dashboard</p>
-        <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de parking</a>
-        <a class="block py-2 px-3 rounded hover:bg-white/20">Historique</a>
-        <a class="block py-2 px-3 rounded hover:bg-white/20">Rapport</a>
-        <a class="block py-2 px-3 rounded hover:bg-white/20">Messagerie</a>
-        <a class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
-        <a class="block py-2 px-3 rounded hover:bg-white/20">Ma véhicule</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Dashboard.html">Dashboard</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Carte de Sécurité</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Historique.html">Historique</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Rapport.html">Rapport</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Messagerie.html">Messagerie</a>
+                <a class="block py-2 px-3 rounded hover:bg-white/20">Guide de Sécurité</a>
+
+                <a class="block py-2 px-3 rounded hover:bg-white/20" href="Mavehicule.html">Ma Véhicule</a>
     </nav>
 
-    <div class="absolute bottom-1 left-1 flex items-center space-x-6">
-        <img src="C:\Users\Lenovo\Desktop\project\assets\images\profil.jpg" class="w-11 h-11 rounded-full border border-[#DC143C]">
+    <div class="absolute bottom-4 left-6 flex items-center space-x-4">
+        <img src="assets/images/profil.jpg" class="w-10 h-10 rounded-full border border-white">
         <p class="font-bold">Profil</p>
     </div>
 
 </aside>
 
 <!-- ===== MAIN CONTENT ===== -->
-<main class="flex-1 p-10">
+<main class="flex-1 p-5 sm:p-6 md:p-10">
 
-    <div class="flex justify-between items-center mb-8">
+    <!-- HEADER -->
+    <div class="flex flex-col sm:flex-row justify-between items-center mb-8 space-y-4 sm:space-y-0">
         <h1 class="text-3xl font-bold">Profil</h1>
-        <img src="C:\Users\Lenovo\Desktop\project\assets\images\logo.png" alt="logo" class="w-28 h-15 object-cover">
+        <img src="assets/images/logo.png" alt="logo" class="w-20 sm:w-24 md:w-28">
     </div>
 
-    <div class="grid grid-cols-3 gap-6">
+    <!-- GRID RESPONSIVE -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- INFOS PERSONNELLES -->
-        <div class="col-span-2 bg-[#F3F7F8] shadow-md rounded-xl p-6">
+        <div class="lg:col-span-2 bg-[#F3F7F8] shadow-md rounded-xl p-6">
             <h2 class="font-bold text-xl mb-4">Informations Personnelles :</h2>
 
-            <div class="flex items-start space-x-6">
-                <div class="flex-1 space-y-2">
+            <div class="flex flex-col md:flex-row items-center md:items-start md:space-x-6 space-y-4 md:space-y-0">
+
+                <div class="flex-1 space-y-2 text-sm md:text-base">
                     <p><strong>Nom et Prénom :</strong> Ounis Khalil</p>
                     <p><strong>Age :</strong> 23 ans</p>
                     <p><strong>Classe :</strong> 4 DS 2</p>
                     <p><strong>Téléphone :</strong> +216 98 574 236</p>
                     <p><strong>Email :</strong> Ounis.Khalil@esprit.tn</p>
 
-                    <div class="flex space-x-3 mt-4">
+                    <div class="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 mt-4">
                         <button class="px-4 py-2 rounded bg-[#DC143C] text-white">Modifier Profil</button>
-                        <button class="px-4 py-2 rounded border-2 border-[#DC143C] text-[#DC143C] bg-transparent">Modifier Mot de Passe</button>
+                        <button class="px-4 py-2 rounded border-2 border-[#DC143C] text-[#DC143C]">
+                            Modifier Mot de Passe
+                        </button>
                     </div>
                 </div>
 
-                <img src="C:\Users\Lenovo\Desktop\project\assets\images\profil.jpg" class="rounded-full w-52 h-52 object-cover">
+                <img src="assets/images/profil.jpg"
+                     class="rounded-full w-32 h-32 sm:w-40 sm:h-40 md:w-52 md:h-52 object-cover">
             </div>
         </div>
 
         <!-- MON FORFAIT -->
         <div class="bg-[#F3F7F8] shadow-md rounded-xl p-6">
-            <h2 class="font-bold text-xl mb-4">Mon Forfaits Actuel :</h2>
+            <h2 class="font-bold text-xl mb-4">Mon Forfait Actuel :</h2>
             <p class="font-semibold mb-2">Forfait étudiant</p>
             <p class="text-sm mb-4">Renouvellement le <strong>01/12/2025</strong></p>
 
-            <h3 class="font-semibold mt-4 mb-2">Fonctionnalités supplémentaires :</h3>
+            <h3 class="font-semibold mt-4 mb-2">Fonctionnalités :</h3>
             <ul class="text-sm space-y-1">
-                <li>✔️ Stationnement illimité</li>
-                <li>✔️ Accès aux zones VIP</li>
-                <li>✔️ Lavage auto mensuel</li>
-                <li>✔️ Vidéosurveillance</li>
+                <li>✔ Stationnement illimité</li>
+                <li>✔ Accès zones VIP</li>
+                <li>✔ Lavage mensuel</li>
+                <li>✔ Vidéosurveillance</li>
             </ul>
 
             <h3 class="font-semibold mt-6 mb-2">Appareils Connectés :</h3>
@@ -112,7 +128,7 @@
                 <p>Notification par email</p>
                 <label class="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" checked class="sr-only peer">
-                    <div class="w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-[#DC143C] transition"></div>
+                    <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#DC143C] transition"></div>
                 </label>
             </div>
 
@@ -133,12 +149,13 @@
         <!-- SÉCURITÉ -->
         <div class="bg-[#F3F7F8] shadow-md rounded-xl p-6">
             <h2 class="font-bold text-xl mb-4">Sécurité du compte :</h2>
+
             <button class="w-full bg-[#DC143C] text-white py-2 rounded mb-4">
                 Activer la Double Authentification
             </button>
 
             <p class="text-sm mb-2">
-                Dernière connexion : il y a 5 minutes ( Ariana/Ghazella )
+                Dernière connexion : il y a 5 minutes ( Ariana / Ghazella )
             </p>
 
             <a href="#" class="text-[#DC143C] font-semibold underline text-sm">
@@ -148,7 +165,19 @@
 
     </div>
 </main>
+
 </div>
+
+<!-- ======= MENU MOBILE SCRIPT ======= -->
+<script>
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        menu.classList.toggle("translate-x-0");
+    });
+</script>
 
 </body>
 </html>
