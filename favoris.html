@@ -48,13 +48,13 @@
           Carte du parking
         </a>
 
-        <a class="block px-4 py-2 rounded hover:bg-white/10 font-semibold mt-6">Dashboard</a>
+        <a href="Dashboard.html" class="block px-4 py-2 rounded hover:bg-white/10 font-semibold mt-6">Dashboard</a>
         <a class="block px-4 py-2 rounded hover:bg-white/10">Sécurité du parking</a>
-        <a class="block px-4 py-2 rounded hover:bg-white/10">Historique</a>
-        <a class="block px-4 py-2 rounded hover:bg-white/10">Rapport</a>
-        <a class="block px-4 py-2 rounded hover:bg-white/10">Messagerie</a>
+        <a href="Historique.html" class="block px-4 py-2 rounded hover:bg-white/10">Historique</a>
+        <a href="Rapport.html" class="block px-4 py-2 rounded hover:bg-white/10">Rapport</a>
+        <a href="Messagerie.html" class="block px-4 py-2 rounded hover:bg-white/10">Messagerie</a>
         <a class="block px-4 py-2 rounded hover:bg-white/10">Guide de sécurité</a>
-        <a class="block px-4 py-2 rounded hover:bg-white/10">Ma véhicule</a>
+        <a href="Mavehicule.html" class="block px-4 py-2 rounded hover:bg-white/10">Ma véhicule</a>
       </nav>
     </div>
 
@@ -68,17 +68,31 @@
   <!-- CONTENU -->
   <main class="flex-1 px-14 py-10">
 
-    <div class="flex justify-between mb-10">
-      <div>
-        <h1 class="text-4xl font-bold">Liste des favoris</h1>
-        <p class="text-gray-600">Consultez les zones favorites</p>
-      </div>
+    <div class="flex justify-between items-start mb-10">
 
-      <button id="btn-notifs"
-              class="bg-primary text-white px-6 py-3 rounded-xl shadow font-semibold">
-        🔔 Notifications (1)
-      </button>
-    </div>
+  <!-- TITRE -->
+  <div>
+    <h1 class="text-4xl font-bold">Liste des favoris</h1>
+    <p class="text-gray-600">Consultez les zones favorites</p>
+  </div>
+
+  <!-- LOGO + BOUTON -->
+  <div class="flex flex-col items-end gap-2">
+
+    <!-- LOGO ESPRIT -->
+    <img src="assets/images/logo.png"
+         class="w-28 object-contain"
+         alt="logo esprit">
+
+    <!-- BOUTON NOTIFICATIONS -->
+    <button id="btn-notifs"
+            class="bg-primary text-white px-6 py-3 rounded-xl shadow font-semibold">
+      🔔 Notifications (1)
+    </button>
+
+  </div>
+</div>
+
   </main>
 </div>
 
