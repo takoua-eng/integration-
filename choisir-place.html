@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Choisir une place - ESPRIT Parking</title>
-  <link href="./output.css" rel="stylesheet">
+  
+  <!-- CDN Tailwind au lieu de output.css -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Reset de sécurité -->
+  <style>
+    html { font-size: 16px !important; }
+    body { font-size: 1rem !important; }
+  </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-sans">
 
 <div class="flex min-h-screen">
 
-  <!-- sidebare -->
+  <!-- sidebar -->
   <aside class="w-64 bg-[#DC143C] text-white min-h-screen flex flex-col">
     <!-- logo -->
     <div class="p-6">
@@ -25,24 +33,32 @@
 
     <!-- navigation -->
     <nav class="flex-1 px-4">
-      <div class="mb-6">
-        <div class="bg-white text-[#DC143C] font-bold py-2 px-4 rounded">Réserver</div>
-        <a href="mes-reservations.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded mt-1">Mes Réservations</a>
-      </div>
-      <div class="mb-6">
-        <div class="text-white font-bold mb-2">Liste des favoris</div>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Carte du parking</a>
-      </div>
-      <div>
-        <div class="text-white font-bold mb-2">Dashboard</div>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Sécurité de parking</a>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Historique</a>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Rapport</a>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Messagerie</a>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Guide de Sécurité</a>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Ma véhicule</a>
-      </div>
-    </nav>
+            <div class="mb-6">
+                <div class="bg-white text-[#DC143C] font-bold py-2 px-4 rounded">
+                    Réserver
+                </div>
+                <a href="mes-reservations.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded mt-1">
+                    Mes Réservations
+                </a>
+            </div>
+
+            <div class="mb-6">
+                <div class="text-white font-bold mb-2">Liste des favoris</div>
+                <a href="carte.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">
+                    Carte du parking
+                </a>
+            </div>
+
+            <div>
+                <div class="text-white font-bold mb-2">Dashboard</div>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Sécurité de parking</a>
+                <a href="Historique.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Historique</a>
+                <a href="Rapport.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Rapport</a>
+                <a href="Messagerie.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Messagerie</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Guide de Sécurité</a>
+                <a href="Mavehicule.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Ma véhicule</a>
+            </div>
+        </nav>
 
     <!-- profil -->
     <div class="p-4 flex items-center space-x-3">
@@ -102,9 +118,7 @@
         </span>
       </div>
 
-
-<!-- les zones-->
-      
+      <!-- les zones -->
       <div class="grid grid-cols-6 gap-4">
         <div>
           <input type="radio" name="spot" id="spot-A1" class="sr-only peer" />
@@ -112,7 +126,7 @@
         </div>
         <div>
           <input type="radio" name="spot" id="spot-A2" class="sr-only peer" />
-          <label for="spot-A2" class=" aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A2</label>
+          <label for="spot-A2" class="aspect-square rounded-lg font-semibold text-lg bg-gray-300 hover:bg-gray-400 cursor-pointer flex items-center justify-center peer-checked:bg-gray-400 peer-checked:text-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-[#131212]">A2</label>
         </div>
         <div>
           <input type="radio" name="spot" id="spot-A3" class="sr-only peer" disabled />
@@ -156,10 +170,6 @@
         </div>
       </div>
 
-
-
-
-
       <!-- Boutons -->
       <div class="mt-6 flex flex-col gap-3">
         <button onclick="window.location.href='reservation-confirm.html'" 
@@ -172,20 +182,9 @@
         </button>
       </div>
 
-
-
-
-
     </div>
   </main>
 </div>
-
-
-
-
-
-
-
 
 </body>
 </html>

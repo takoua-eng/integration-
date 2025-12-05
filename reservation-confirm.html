@@ -4,9 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Réservation Confirmée - ESPRIT Parking</title>
-  <link href="./output.css" rel="stylesheet">
+  
+  <!-- ✅ CDN Tailwind au lieu de output.css -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Reset de sécurité -->
+  <style>
+    html { font-size: 16px !important; }
+    body { font-size: 1rem !important; }
+  </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-sans">
 
 <div class="flex min-h-screen">
 
@@ -25,25 +33,32 @@
 
     <!-- Navigation -->
     <nav class="flex-1 px-4">
-      <div class="mb-6">
-        <div class="bg-white text-[#DC143C] font-bold py-2 px-4 rounded">Réserver</div>
-        <a href="mes-reservations.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded mt-1">Mes Réservations</a>
-      </div>
-      <div class="mb-6">
-        <div class="text-white font-bold mb-2">Liste des favoris</div>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Carte du parking</a>
-      </div>
-      <div>
-        <div class="text-white font-bold mb-2">Dashboard</div>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Sécurité de parking</a>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Historique</a>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Rapport</a>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Messagerie</a>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Guide de Sécurité</a>
-        <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Ma véhicule</a>
-      </div>
-    </nav>
+            <div class="mb-6">
+                <div class="bg-white text-[#DC143C] font-bold py-2 px-4 rounded">
+                    Réserver
+                </div>
+                <a href="mes-reservations.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded mt-1">
+                    Mes Réservations
+                </a>
+            </div>
 
+            <div class="mb-6">
+                <div class="text-white font-bold mb-2">Liste des favoris</div>
+                <a href="carte.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">
+                    Carte du parking
+                </a>
+            </div>
+
+            <div>
+                <div class="text-white font-bold mb-2">Dashboard</div>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Sécurité de parking</a>
+                <a href="Historique.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Historique</a>
+                <a href="Rapport.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Rapport</a>
+                <a href="Messagerie.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Messagerie</a>
+                <a href="#" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Guide de Sécurité</a>
+                <a href="Mavehicule.html" class="block text-white py-2 px-4 hover:bg-white/20 rounded">Ma véhicule</a>
+            </div>
+        </nav>
     <!-- Profil -->
     <div class="p-4 flex items-center space-x-3">
       <img src="assets/images/profil.jpg" alt="Profil" class="w-12 h-12 rounded-full">
@@ -56,7 +71,7 @@
     
     <!-- Header -->
     <div class="flex justify-between items-center mb-8">
-      <h1 class="text-sm text-gray-500">Félécitation!</h1>
+      <h1 class="text-sm text-gray-500">Félicitation!</h1>
       <img src="assets/images/logo.png" alt="ESPRIT Logo" class="h-20">
     </div>
 
@@ -93,10 +108,10 @@
           Partager Ma Place
         </button>
         <button onclick="window.location.href='scanner.html'" 
-          class="flex-1 bg-[#DC143C] text-white py-3 rounded-lg font-semibold hover:bg-[#DC143C]">
+          class="flex-1 bg-[#DC143C] text-white py-3 rounded-lg font-semibold hover:bg-[#B01030]">
           Scanner le QR Code
         </button>
-        <button onclick="window.location.href='reservation.html'" 
+        <button onclick="window.location.href='choisir-place.html'" 
           class="flex-1 border border-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-50">
           Annuler
         </button>
