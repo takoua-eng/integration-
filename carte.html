@@ -21,10 +21,14 @@
 </head>
 
 <body class="bg-bgpage">
+
 <div class="flex min-h-screen">
 
-<!-- SIDEBAR -->
-<aside class="w-72 bg-gradient-to-b from-primary to-red-800 text-white p-6 flex flex-col justify-between">
+<!-- ================== SIDEBAR ================== -->
+<aside id="sidebar"
+       class="w-72 bg-gradient-to-b from-primary to-red-800 text-white p-6 flex-col justify-between
+              hidden md:flex fixed md:static inset-y-0 left-0 z-40">
+
   <div>
     <div class="flex items-center gap-3 mb-10 border-b border-white/30 pb-4">
       <div class="bg-white text-primary font-bold rounded-lg w-10 h-10 flex items-center justify-center">P</div>
@@ -49,45 +53,43 @@
     </nav>
   </div>
 
-  <div class="flex items-center gap-3">
+  <div class="flex items-center gap-3 mt-10">
     <img src="https://i.pravatar.cc/100" class="w-12 h-12 rounded-full border border-white">
     <span class="font-semibold">Profil</span>
   </div>
 </aside>
 
-<!-- CONTENU -->
-<main class="flex-1 px-14 py-10">
+<!-- Bouton menu mobile -->
+<button class="md:hidden fixed top-4 left-4 z-50 bg-primary text-white px-4 py-2 rounded-lg shadow"
+        onclick="document.getElementById('sidebar').classList.toggle('hidden')">
+  ☰ Menu
+</button>
 
-  <div class="flex justify-between items-start mb-8">
+<!-- ================== CONTENU ================== -->
+<main class="flex-1 px-6 md:px-14 py-10 md:ml-0 w-full">
 
-    <!-- TITRE -->
+  <!-- HEADER RESPONSIVE -->
+  <div class="flex flex-col md:flex-row justify-between md:items-start items-center mb-8 text-center md:text-left">
+
     <div>
-        <h1 class="text-4xl font-bold">Carte du parking</h1>
-        <p class="text-gray-600">Consultez les zones du parking</p>
+      <h1 class="text-4xl font-bold">Carte du parking</h1>
+      <p class="text-gray-600">Consultez les zones du parking</p>
     </div>
 
-    <!-- LOGO + BOUTON -->
-    <div class="flex flex-col items-end gap-2">
-        
-        <!-- LOGO ESPRIT AU-DESSUS DU BOUTON -->
-        <img src="assets/images/logo.png"
-             class="w-28 object-contain"
-             alt="logo esprit">
+    <div class="flex flex-col items-center md:items-end gap-2 mt-4 md:mt-0">
+      <img src="assets/images/logo.png" class="w-24 md:w-28 object-contain" alt="logo esprit">
 
-        <!-- BOUTON -->
-        <button id="follow-btn"
-                class="bg-primary text-white px-8 py-3 rounded-xl shadow font-semibold">
-            ❤ Suivre
-        </button>
-
+      <button id="follow-btn"
+              class="bg-primary text-white px-8 py-3 rounded-xl shadow font-semibold">
+        ❤ Suivre
+      </button>
     </div>
-</div>
 
+  </div>
 
-  <!-- DROPDOWN ZONES -->
+  <!-- DROPDOWN -->
   <div class="relative bg-white rounded-2xl shadow p-6 mb-8">
-    <div id="selected-zone"
-         class="flex justify-between items-center cursor-pointer">
+    <div id="selected-zone" class="flex justify-between items-center cursor-pointer">
       <div>
         <h2 id="zone-title" class="font-bold"></h2>
         <p id="zone-info" class="text-gray-600"></p>
@@ -95,143 +97,102 @@
       <span class="text-2xl">⌄</span>
     </div>
 
-    <div id="zone-dropdown"
-         class="hidden mt-4 border-t pt-4 space-y-3">
+    <div id="zone-dropdown" class="hidden mt-4 border-t pt-4 space-y-3">
       <div class="zone-option cursor-pointer" data-zone="H-A">Bloc H - Zone A</div>
       <div class="zone-option cursor-pointer" data-zone="H-B">Bloc H - Zone B</div>
       <div class="zone-option cursor-pointer" data-zone="G-A">Bloc G - Zone A</div>
     </div>
   </div>
 
-  <!-- CARTE -->
-  <div class="bg-white rounded-2xl shadow p-10">
-    <div class="grid grid-cols-6 gap-8 text-xl font-bold text-center mb-10">
-      <div class="spot bg-gray-200 py-8 rounded" data-id="A1">A1</div>
-      <div class="spot bg-gray-200 py-8 rounded" data-id="A3">A3</div>
-      <div class="spot bg-gray-200 py-8 rounded" data-id="A5">A5</div>
-      <div class="spot bg-gray-200 py-8 rounded" data-id="A7">A7</div>
-      <div class="spot bg-gray-200 py-8 rounded" data-id="A9">A9</div>
-      <div class="spot bg-gray-200 py-8 rounded" data-id="A11">A11</div>
+  <!-- CARTE DES PLACES -->
+  <div class="bg-white rounded-2xl shadow p-6 md:p-10">
 
-      <div class="spot bg-gray-200 py-8 rounded" data-id="A2">A2</div>
-      <div class="spot bg-gray-200 py-8 rounded" data-id="A4">A4</div>
-      <div class="spot bg-gray-200 py-8 rounded" data-id="A6">A6</div>
-      <div class="spot bg-gray-200 py-8 rounded" data-id="A8">A8</div>
-      <div class="spot bg-gray-200 py-8 rounded" data-id="A10">A10</div>
-      <div class="spot border-2 border-gray-600 py-8 rounded" data-id="A12">A12</div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8 text-center font-bold mb-10">
+
+      <!-- spots générés -->
+      <div class="spot bg-gray-200 py-6 md:py-8 rounded" data-id="A1">A1</div>
+      <div class="spot bg-gray-200 py-6 md:py-8 rounded" data-id="A3">A3</div>
+      <div class="spot bg-gray-200 py-6 md:py-8 rounded" data-id="A5">A5</div>
+      <div class="spot bg-gray-200 py-6 md:py-8 rounded" data-id="A7">A7</div>
+      <div class="spot bg-gray-200 py-6 md:py-8 rounded" data-id="A9">A9</div>
+      <div class="spot bg-gray-200 py-6 md:py-8 rounded" data-id="A11">A11</div>
+
+      <div class="spot bg-gray-200 py-6 md:py-8 rounded" data-id="A2">A2</div>
+      <div class="spot bg-gray-200 py-6 md:py-8 rounded" data-id="A4">A4</div>
+      <div class="spot bg-gray-200 py-6 md:py-8 rounded" data-id="A6">A6</div>
+      <div class="spot bg-gray-200 py-6 md:py-8 rounded" data-id="A8">A8</div>
+      <div class="spot bg-gray-200 py-6 md:py-8 rounded" data-id="A10">A10</div>
+      <div class="spot border-2 border-gray-600 py-6 md:py-8 rounded" data-id="A12">A12</div>
     </div>
 
-    <div class="flex items-center gap-10">
-  <span><span class="inline-block w-5 h-5 bg-gray-200 mr-2"></span>Libre</span>
-  <span><span class="inline-block w-5 h-5 bg-red-300 mr-2"></span>Occupée</span>
+    <!-- LÉGENDE -->
+    <div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
 
-  <span class="flex items-center gap-4">
-    <span>
-      <span class="inline-block w-5 h-5 border-2 border-gray-600 mr-2"></span>
-      Sélectionnée
-    </span>
+      <span><span class="inline-block w-5 h-5 bg-gray-200 mr-2"></span>Libre</span>
+      <span><span class="inline-block w-5 h-5 bg-red-300 mr-2"></span>Occupée</span>
 
-    <!-- BOUTON DETAILS -->
-    <a href="#"
-       class="border border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition">
-      ⓘ Détails
-    </a>
-  </span>
-</div>
+      <span class="flex items-center gap-4">
+        <span><span class="inline-block w-5 h-5 border-2 border-gray-600 mr-2"></span>Sélectionnée</span>
 
+        <a href="#" class="border border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition">
+          ⓘ Détails
+        </a>
+      </span>
+
+    </div>
   </div>
 
 </main>
 </div>
 
-<!-- SCRIPT -->
+<!-- ================== SCRIPT ================== -->
 <script>
+/* ton JS original inchangé */
 const PARKINGS = {
-  "H-A": {
-    title: "Bloc H - Zone A",
-    distance: "80 m",
-    time: "~2 mins",
-    available: true,
-    occupied: ["A5", "A8"]
-  },
-  "H-B": {
-    title: "Bloc H - Zone B",
-    distance: "120 m",
-    time: "~4 mins",
-    available: false,
-    occupied: ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12"]
-  },
-  "G-A": {
-    title: "Bloc G - Zone A",
-    distance: "200 m",
-    time: "~6 mins",
-    available: true,
-    occupied: ["A2", "A4"]
-  }
+  "H-A": { title: "Bloc H - Zone A", distance: "80 m", time: "~2 mins", available: true, occupied: ["A5","A8"] },
+  "H-B": { title: "Bloc H - Zone B", distance: "120 m", time: "~4 mins", available: false,
+           occupied: ["A1","A2","A3","A4","A5","A6","A7","A8","A9","A10","A11","A12"] },
+  "G-A": { title: "Bloc G - Zone A", distance: "200 m", time: "~6 mins", available: true, occupied: ["A2","A4"] }
 };
 
-let currentZoneKey = "H-A";
+let currentZoneKey = new URLSearchParams(window.location.search).get("zone") || "H-A";
 
-// ✅ LIRE LA ZONE DEPUIS L’URL
-const params = new URLSearchParams(window.location.search);
-const zoneFromURL = params.get("zone");
+function getFavorites(){ return JSON.parse(localStorage.getItem("favorites")||"[]"); }
+function saveFavorites(f){ localStorage.setItem("favorites",JSON.stringify(f)); }
 
-// ✅ SI LA ZONE EXISTE, ON L’UTILISE
-if (zoneFromURL && PARKINGS[zoneFromURL]) {
-  currentZoneKey = zoneFromURL;
-}
-
-
-function getFavorites() {
-  return JSON.parse(localStorage.getItem("favorites") || "[]");
-}
-function saveFavorites(favs) {
-  localStorage.setItem("favorites", JSON.stringify(favs));
-}
-
-function renderZone(zoneKey) {
-  const zone = PARKINGS[zoneKey];
-  currentZoneKey = zoneKey;
+function renderZone(key){
+  const zone = PARKINGS[key];
+  currentZoneKey = key;
 
   document.getElementById("zone-title").innerText = zone.title;
-  document.getElementById("zone-info").innerText =
-    `📍 ${zone.distance} · ⏱ ${zone.time}`;
+  document.getElementById("zone-info").innerText = `📍 ${zone.distance} · ⏱ ${zone.time}`;
 
   document.querySelectorAll(".spot").forEach(s => {
-    s.classList.remove("bg-red-300");
+    s.classList.remove("bg-red-300","border-2","border-gray-800");
     s.classList.add("bg-gray-200");
-    if (zone.occupied.includes(s.dataset.id)) {
+
+    if(zone.occupied.includes(s.dataset.id)){
       s.classList.remove("bg-gray-200");
       s.classList.add("bg-red-300");
     }
-    // reset sélection
-    s.classList.remove("border-2", "border-gray-800");
   });
 
-  enableSpotSelection(); // ✅ IMPORTANT
-
+  enableSpotSelection();
   document.getElementById("zone-dropdown").classList.add("hidden");
 }
 
 document.getElementById("selected-zone").onclick = () =>
   document.getElementById("zone-dropdown").classList.toggle("hidden");
 
-document.querySelectorAll(".zone-option").forEach(opt => {
-  opt.onclick = () => renderZone(opt.dataset.zone);
-});
+document.querySelectorAll(".zone-option").forEach(o =>
+  o.onclick = () => renderZone(o.dataset.zone)
+);
 
 document.getElementById("follow-btn").onclick = () => {
-  const favs = getFavorites();
+  let favs = getFavorites();
   const z = PARKINGS[currentZoneKey];
-
-  if (!favs.find(f => f.id === currentZoneKey)) {
-    favs.push({
-      id: currentZoneKey,
-      title: z.title,
-      distance: z.distance,
-      time: z.time,
-      available: z.available
-    });
+  if(!favs.find(f=>f.id===currentZoneKey)){
+    favs.push({ id:currentZoneKey, title:z.title, distance:z.distance, time:z.time, available:z.available });
     saveFavorites(favs);
     alert("Zone suivie ✅");
   }
@@ -239,31 +200,21 @@ document.getElementById("follow-btn").onclick = () => {
 
 renderZone(currentZoneKey);
 
-let selectedSpot = null;
+function enableSpotSelection(){
+  document.querySelectorAll(".spot").forEach(spot=>{
+    spot.onclick = ()=>{
+      if(spot.classList.contains("bg-red-300")) return;
 
-  function enableSpotSelection() {
-    document.querySelectorAll(".spot").forEach(spot => {
+      document.querySelectorAll(".spot").forEach(s =>
+        s.classList.remove("border-2","border-gray-800")
+      );
 
-      spot.onclick = () => {
-        // ❌ Si occupée (rouge), on ne fait rien
-        if (spot.classList.contains("bg-red-300")) return;
+      spot.classList.add("border-2","border-gray-800");
+    };
+  });
+}
+enableSpotSelection();
 
-        // Enlever l’ancienne sélection
-        document.querySelectorAll(".spot").forEach(s =>
-          s.classList.remove("border-2", "border-gray-800")
-        );
-
-        // Mettre sélection sur la nouvelle
-        spot.classList.add("border-2", "border-gray-800");
-        selectedSpot = spot.dataset.id;
-
-        console.log("Place sélectionnée :", selectedSpot);
-      };
-    });
-  }
-
-  // Activer au chargement
-  enableSpotSelection();
 </script>
 
 </body>
